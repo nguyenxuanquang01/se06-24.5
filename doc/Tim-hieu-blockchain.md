@@ -1,3 +1,0 @@
-// smart contract
-// solidity
-// sample
