@@ -43,8 +43,14 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 
 # Solidity
 
-Là ngôn ngữ lập trình cấp cao, hướng đối tượng được sử dụng để viết ra các Smart Constract dựa trên công nghệ Blockchain
-Smart Constract chạy trên máy ảo Ethereum (Ethereum Virtal Machine)
-Là một ngôn ngữ ngoặc nhọn, và Solidity bị ảnh hưởng nhiều bởi các ngôn ngữ lập trình như Python, C++ hay JavaScript
-Một số ứng dụng phổ biến của Solidity như là : Đấu giá sản phẩm, Bỏ phiếu, Huy động vốn, Tiền ảo,...
-EVM (Ethereum Virtal Machine) Là môi trường thời gian chạy các Smart Constract trong Ethereum
+- Là ngôn ngữ lập trình cấp cao, hướng đối tượng được sử dụng để viết ra các Smart Constract dựa trên công nghệ Blockchain
+- Smart Constract chạy trên máy ảo Ethereum (Ethereum Virtal Machine)
+- Là một ngôn ngữ ngoặc nhọn, và Solidity bị ảnh hưởng nhiều bởi các ngôn ngữ lập trình như Python, C++ hay JavaScript
+- Một số ứng dụng phổ biến của Solidity như là : Đấu giá sản phẩm, Bỏ phiếu, Huy động vốn, Tiền ảo,...
+- EVM (Ethereum Virtal Machine) Là môi trường thời gian chạy các Smart Constract trong Ethereum
+- Constract trong Solidity tương như class trong Java hay Python, có thể đa kế thừa sử dụng từ khóa 'is'
+- Cấu trúc của một hàm trong Solidity : function <function name> (<parameter types>) {internal | external | public | private} [pure | constant | view | payable] [returns (<return types>)]
+  - internal : chỉ có thể truy cập từ các hàm bên trong Constract hoặc từ Constract con
+  - external : có thể được truy cập từ Constract khác, bản thân Constract chứa hàm cũng có thể gọi nó thông qua 'this'
+  - public : có thể được gọi từ Constract (không cần sử dụng đến this) hoặc từ constract khác
+  - private : chỉ có thể truy cập từ hàm bên trong Constract
