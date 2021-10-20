@@ -3,8 +3,6 @@
 
 # Hợp đồng thông minh
 
----
-
 ### Hợp đồng thông minh là gì
 
 Smart Contract (Hợp Đồng Thông Minh) là một thuật ngữ mô tả một bộ giao thức đặc biệt có khả năng tự động thực hiện các điều khoản, các thoả thuận giữa các bên trong hợp đồng (ở trường hợp này là các hệ thống máy tính) nhờ sự hỗ trợ của công nghệ Blockchain.
