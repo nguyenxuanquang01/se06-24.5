@@ -56,5 +56,15 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
   - private : chỉ có thể truy cập từ hàm bên trong Constract
   - pure : không truy cậy hay thay đổi các thuộc tính của Constract
   - view : không thay đổi thuộc tính Constract
-  - constant :
-  - payable : 
+ - variable trong solidity 
+  - state variables : các biến có giá trị được lưu trữ vĩnh viễn trong bộ lưu trữ Constract
+  - local variables : biến cục bộ nằm ở bên trong function
+  - global variables : là loại biến đặc biệt tồn tại trong không gian làm việc toàn cục và cung cấp thông tin về Blockchain và các thuộc tính giao dịch 
+- phạm vi variable trong solidity
+  - public : có thể được truy cập nội bộ cũng như thông qua lời gọi. Hàm getter sẽ được tự động tạo
+  - internal : chỉ có thể truy cập nội bộ từ Constrant hoặc Constract bắt nguồn từ nó
+  - private : chỉ truy cập nội bộ bên trong Constrant
+- kiểu dữ liệu : dựa trên kiểu dữ liệu của một biến, hệ điều hành phân bổ bộ nhớ và quyết định những gì có thể lưu trữ trong bộ nhớ dành riêng
+  - bool -> true/false
+  - int -> số nguyên
+  - uint -> số nguyên dương  
