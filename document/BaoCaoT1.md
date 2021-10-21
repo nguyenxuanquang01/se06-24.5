@@ -43,27 +43,27 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 
 # Solidity
 
-- Là ngôn ngữ lập trình cấp cao, hướng đối tượng được sử dụng để viết ra các Smart Constract dựa trên công nghệ Blockchain
-- Smart Constract chạy trên máy ảo Ethereum (Ethereum Virtal Machine)
+- Là ngôn ngữ lập trình cấp cao, hướng đối tượng được sử dụng để viết ra các Smart Contract dựa trên công nghệ Blockchain
+- Smart Contract chạy trên máy ảo Ethereum (Ethereum Virtal Machine)
 - Là một ngôn ngữ ngoặc nhọn, và Solidity bị ảnh hưởng nhiều bởi các ngôn ngữ lập trình như Python, C++ hay JavaScript
 - Một số ứng dụng phổ biến của Solidity như là : Đấu giá sản phẩm, Bỏ phiếu, Huy động vốn, Tiền ảo,...
-- EVM (Ethereum Virtal Machine) Là môi trường thời gian chạy các Smart Constract trong Ethereum
-- Constract trong Solidity tương tự như class trong Java hay Python, có thể đa kế thừa sử dụng từ khóa 'is'
+- EVM (Ethereum Virtal Machine) Là môi trường thời gian chạy các Smart Contract trong Ethereum
+- Contract trong Solidity tương tự như class trong Java hay Python, có thể đa kế thừa sử dụng từ khóa 'is'
 - Cấu trúc của một hàm trong Solidity : function function_name (parameter types) (internal | external | public | private) (pure | constant | view | payable) (returns (return types)) {}
-  - internal : chỉ có thể truy cập từ các hàm bên trong Constract hoặc từ Constract con
-  - external : có thể được truy cập từ Constract khác, bản thân Constract chứa hàm cũng có thể gọi nó thông qua 'this'
-  - public : có thể được gọi từ Constract (không cần sử dụng đến this) hoặc từ constract khác
-  - private : chỉ có thể truy cập từ hàm bên trong Constract
-  - pure : không truy cậy hay thay đổi các thuộc tính của Constract
-  - view : không thay đổi thuộc tính Constract
+  - internal : chỉ có thể truy cập từ các hàm bên trong Contract hoặc từ Contract con
+  - external : có thể được truy cập từ Contract khác, bản thân Contract chứa hàm cũng có thể gọi nó thông qua 'this'
+  - public : có thể được gọi từ Contract (không cần sử dụng đến this) hoặc từ contract khác
+  - private : chỉ có thể truy cập từ hàm bên trong Contract
+  - pure : không truy cậy hay thay đổi các thuộc tính của Contract
+  - view : không thay đổi thuộc tính Contract
  - variable trong solidity 
-  - state variables : các biến có giá trị được lưu trữ vĩnh viễn trong bộ lưu trữ Constract
+  - state variables : các biến có giá trị được lưu trữ vĩnh viễn trong bộ lưu trữ Contract
   - local variables : biến cục bộ nằm ở bên trong function
   - global variables : là loại biến đặc biệt tồn tại trong không gian làm việc toàn cục và cung cấp thông tin về Blockchain và các thuộc tính giao dịch 
 - phạm vi variable trong solidity
   - public : có thể được truy cập nội bộ cũng như thông qua lời gọi. Hàm getter sẽ được tự động tạo
-  - internal : chỉ có thể truy cập nội bộ từ Constrant hoặc Constract bắt nguồn từ nó
-  - private : chỉ truy cập nội bộ bên trong Constrant
+  - internal : chỉ có thể truy cập nội bộ từ Contract hoặc Contract bắt nguồn từ nó
+  - private : chỉ truy cập nội bộ bên trong Contract
 - kiểu dữ liệu : dựa trên kiểu dữ liệu của một biến, hệ điều hành phân bổ bộ nhớ và quyết định những gì có thể lưu trữ trong bộ nhớ dành riêng
   - bool -> true/false
   - int -> số nguyên
