@@ -67,4 +67,9 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 - kiểu dữ liệu : dựa trên kiểu dữ liệu của một biến, hệ điều hành phân bổ bộ nhớ và quyết định những gì có thể lưu trữ trong bộ nhớ dành riêng
   - bool -> true/false
   - int -> số nguyên
-  - uint -> số nguyên dương  
+  - uint -> số nguyên dương 
+  - address -> địa chỉ của account
+  - mapping -> là kiểu ánh xạ dạng key-value 
+  - struct -> kiểu cấu trúc được sử dụng để biểu diễn một bản ghi 
+  - enum -> chứa các giá trị được xác định trước 
+  - array -> mảng lưu trữ dữ liệu cùng kiểu, length (lấy độ dài mảng) push (thêm phần tử vào cuối mảng trả lại mảng mới)
