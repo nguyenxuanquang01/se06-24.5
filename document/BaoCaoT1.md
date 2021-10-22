@@ -56,7 +56,7 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
   - private : chỉ có thể truy cập từ hàm bên trong Contract
   - pure : không truy cậy hay thay đổi các thuộc tính của Contract
   - view : không thay đổi thuộc tính Contract
- - variable trong solidity 
+- variable trong solidity 
   - state variables : các biến có giá trị được lưu trữ vĩnh viễn trong bộ lưu trữ Contract
   - local variables : biến cục bộ nằm ở bên trong function
   - global variables : là loại biến đặc biệt tồn tại trong không gian làm việc toàn cục và cung cấp thông tin về Blockchain và các thuộc tính giao dịch 
