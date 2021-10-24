@@ -74,6 +74,110 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
   - enum -> chứa các giá trị được xác định trước
   - array -> mảng lưu trữ dữ liệu cùng kiểu, length (lấy độ dài mảng) push (thêm phần tử vào cuối mảng trả lại mảng mới)
 - modifier trong solidity được sử dụng để kiểm tra điều kiện trước khi đoạn code bên trong phương thức được thực thi
+- toán tử trong Solidity :
+  - toán tử số học :
+    -  +(phép cộng)
+    -  -(phép trừ)
+    -  *(phép nhân)
+    -  /(phép chia)
+    -  %(chia lấy phần dư)
+    -  ++(tăng dần)
+    -  --(giảm dần)
+  - toán tử so sánh :
+    -  ==(bằng bằng)
+      Kiểm tra xem giá trị của hai toán hạng có bằng nhau hay không, nếu có thì điều kiện trở thành true
+    - !=(không bằng)
+      Kiểm tra xem giá trị của hai toán hạng có bằng nhau hay không, nếu các giá trị không bằng nhau thì điều kiện trở thành true.
+    - Lớn hơn: >
+      Kiểm tra xem giá trị của toán hạng bên trái có lớn hơn giá trị của toán hạng bên phải hay không, nếu có thì điều kiện trở thành true.
+    - <(nhỏ hơn)
+      Kiểm tra xem giá trị của toán hạng bên trái có nhỏ hơn giá trị của toán hạng bên phải hay không, nếu có thì điều kiện trở thành true.
+    - Lớn hơn hoặc Bằng: >=
+      Kiểm tra xem giá trị của toán hạng bên trái có lớn hơn hoặc bằng giá trị của toán hạng bên phải hay không, nếu có thì điều kiện trở thành true.
+    - <= (Nhỏ hơn hoặc Bằng)
+      Kiểm tra xem giá trị của toán hạng bên trái có nhỏ hơn hoặc bằng giá trị của toán hạng bên phải hay không, nếu có thì điều kiện trở thành true.
+  - toán tử logic :
+    - && (và)
+      Nếu cả hai toán hạng đều khác 0, thì điều kiện trở thành true.
+    - || (hoặc)
+      Nếu bất kỳ toán hạng nào trong hai toán hạng khác 0, thì điều kiện trở thành true.
+    - ! (Không)
+      Đảo ngược trạng thái logic của toán hạng của nó. Nếu một điều kiện là đúng, thì toán tử logic NOT sẽ làm cho nó sai.
+  - toán tử bitwise :
+    - & (Bitwise AND)
+      Nó thực hiện phép toán Boolean AND trên mỗi bit của các đối số nguyên của nó.
+    - | (BitWise OR)
+      Nó thực hiện phép toán Boolean OR trên mỗi bit của các đối số nguyên của nó.
+    - ^ (Bitwise XOR)
+      Nó thực hiện một phép toán OR độc quyền Boolean trên mỗi bit của các đối số nguyên của nó.
+      OR độc quyền có nghĩa là toán hạng một là đúng hoặc toán hạng hai là đúng, nhưng không phải cả hai.
+    - ~ (Bitwise Not)
+      Nó là một toán tử một ngôi và hoạt động bằng cách đảo ngược tất cả các bit trong toán hạng.
+    - << (Dịch chuyển sang trái)
+      Nó di chuyển tất cả các bit trong toán hạng đầu tiên sang trái theo số vị trí được chỉ định trong toán hạng thứ hai. 
+      Các bit mới được lấp đầy bởi các số không. Chuyển một giá trị sang trái một vị trí tương đương với nhân nó với 2, dịch chuyển hai vị trí tương đương với nhân 4
+    -  (Chuyển sang phải): >> 
+       Toán tử chuyển sang phải nhị phân. 
+       Giá trị của toán hạng bên trái được di chuyển sang phải bằng số bit được chỉ định bởi toán hạng bên phải.
+    -  (Sang phải với Zero): >>>
+       Toán tử này cũng giống như toán tử >>, ngoại trừ việc các bit được chuyển sang bên trái luôn bằng không.
+  - toán tử gán :
+    - = (bằng)
+      Gán giá trị từ toán hạng bên phải cho toán hạng bên trái
+    - +=
+      Nó thêm toán hạng bên phải vào toán hạng bên trái và gán kết quả cho toán hạng bên trái
+    - -=
+      Nó trừ toán hạng bên phải khỏi toán hạng bên trái và gán kết quả cho toán hạng bên trái.
+    - *= 
+      Nó nhân toán hạng bên phải với toán hạng bên trái và gán kết quả cho toán hạng bên trái.
+    - /= 
+      Nó chia toán hạng bên trái với toán hạng bên phải và gán kết quả cho toán hạng bên trái.
+    - %= 
+      Nó có mô đun sử dụng hai toán hạng và gán kết quả cho toán hạng bên trái.
+    Lưu ý : Logic tương tự áp dụng cho các toán tử Bitwise nên chúng sẽ giống như << =, >> =, >> =, & =, | = và ^ =.
+  - toán tử có điều kiện :
+    - Toán tử điều kiện đầu tiên đánh giá một biểu thức cho một giá trị đúng hoặc sai và sau đó thực hiện một trong hai câu lệnh đã cho tùy thuộc vào kết quả của việc đánh giá.
+      ? : (Conditional ) Nếu điều kiện là đúng? Sau đó giá trị X: Ngược lại giá trị Y
+      
+- vòng lặp :
+  - while (biểu thức) {
+       Các câu lệnh sẽ được thực thi nếu biểu thức là true
+    }
+    
+  - do {
+       Các câu lệnh được thực hiện;
+    } while (biểu thức);
+      - (Lưu ý: Vòng lặp do ... while cũng tương tự như vòng lặp while ngoại trừ việc kiểm tra điều kiện xảy ra ở phần cuối của vòng lặp. Điều này có nghĩa là vòng lặp sẽ luôn được thực hiện ít nhất một lần, ngay cả khi điều kiện sai .)    
+  - for (tạo vòng lặp; lệnh kiểm tra; lệnh lặp) {Các câu lệnh sẽ được thực thi nếu điều kiện kiểm tra là đúng}
+       - (Lưu ý:Vòng lặp for là hình thức nhỏ gọn nhất của vòng lặp. Nó bao gồm ba phần quan trọng sau:
+       - Khởi tạo vòng lặp nơi chúng tôi khởi tạo bộ đếm của mình thành giá trị bắt đầu. Câu lệnh khởi tạo được thực hiện trước khi bắt đầu vòng lặp.
+       - Câu lệnh kiểm tra sẽ kiểm tra xem một điều kiện đã cho có đúng hay không. Nếu điều kiện là đúng, thì mã được đưa ra bên trong vòng lặp sẽ được thực thi, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
+       - Câu lệnh lặp trong đó bạn có thể tăng hoặc giảm bộ đếm của mình.
+       - Bạn có thể đặt tất cả ba phần trong một dòng duy nhất được phân tách bằng dấu chấm phẩy.)
+  - kiểm soát vòng lặp :
+      - break :Câu lệnh break , được giới thiệu ngắn gọn với câu lệnh switch , được sử dụng để thoát khỏi một vòng lặp sớm, thoát ra khỏi các dấu ngoặc nhọn bao quanh.
+      - continue :Câu lệnh continue yêu cầu trình thông dịch bắt đầu ngay lập tức lần lặp tiếp theo của vòng lặp và bỏ qua khối mã còn lại. Khi gặp câu lệnh continue , luồng chương trình chuyển đến biểu thức kiểm tra vòng lặp ngay lập tức và nếu điều kiện vẫn đúng, thì nó bắt đầu lặp tiếp theo, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
+
+- câu lệnh điều kiện :
+  - if : Ở đây, một biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho sẽ được thực thi. Nếu biểu thức sai, thì không câu lệnh nào không được thực thi. Hầu hết các trường hợp, bạn sẽ sử dụng các toán tử so sánh trong khi đưa ra quyết định.
+    - if(biểu thức) {                                                                                                                                                                     Các câu lệnh sẽ được thực thi nếu biểu thức là đúng                                                                                                                             }  
+  - if-else :Ở đây biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho trong khối 'if' sẽ được thực thi. Nếu biểu thức sai, thì (các) câu lệnh đã cho trong khối khác sẽ được thực thi
+    - if (biểu thức) {
+      Các câu lệnh sẽ được thực thi nếu biểu thức là true
+      } else {
+      Các câu lệnh sẽ được thực thi nếu biểu thức là false
+      }
+    
+  - if-else if :Các câu lệnh được thực thi dựa trên điều kiện đúng, nếu không có điều kiện nào là đúng thì khối else được thực thi.
+      - if (biểu thức 1) {
+        Các câu lệnh sẽ được thực thi nếu biểu thức 1 là true
+        } else if (biểu thức 2) {
+        Các câu lệnh sẽ được thực thi nếu biểu thức 2 là true
+        } else if (biểu thức 3) {
+        Các câu lệnh sẽ được thực thi nếu biểu thức 3 là true
+        } else {
+        Các câu lệnh sẽ được thực thi nếu không có biểu thức nào là đúng
+        }
 
 # Ví dụ đơn giản;
 
