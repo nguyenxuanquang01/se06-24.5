@@ -144,3 +144,49 @@ contract SimpleAution{
 ## Thư viện Azure Blockchain Workbench
 # Khái niệm Azure Blockchain Workbench:
 - Azure Blockchain Workbench Preview là một tập hợp các dịch vụ và khả năng của Azure được thiết kế để giúp bạn tạo và triển khai các ứng dụng blockchain để chia sẻ quy trình kinh doanh và dữ liệu với các tổ chức khác. Azure Blockchain Workbench cung cấp giàn giáo cơ sở hạ tầng để xây dựng các ứng dụng Blockchain cho phép các nhà phát triển tập trung và việc tạo logic kinh doanh và hợp đồng thông minh. Nó cũng giúp tạo các ứng dụng Blockchain dễ dàng hơn bằng cách tích hợp 1 số dịch vụ và khả năng của Azure để giúp tự động hoá các nhiệm vụ phát triển chung.
+
+*Kiến trúc Azure Blockchain Workbench:* Azure Blockchain Workbench Preview đơn giản hoá việc phát triển ứng dụng blockchain bằng cách cung cấp giải pháp sử dụng 1 số thành phần Azure. Blockchain Workbench có thể được triển khai bằng cách sử dụng một mẫu giải pháp trong Azure Marketplace. Mẫu cho pháp bạn chọn các mô-đun và thành phần để triển khai bao gồm ngăn xếp blockchain, loại ứng dụng khách và hỗ trợ tích hợp Iot. Sau khi được triển khai, Blockchain Workbench cung cấp quyền truy cập và ứng dụng web, ứng dụng iOS và ứng dụng Android.
+
+*Mô hình kiến trúc Azure Blockchain Workbench*
+
+![image](https://user-images.githubusercontent.com/75937525/138595717-2bfd7780-29fc-4396-a857-51422151b90f.png)
+
+**Clients applications:**
+-	Workbench cung cấp các ứng dụng khách được tạo tự động cho web và thiết bị di động (iOS, Android), có thể được sử dụng để xác thực, kiểm tra và xem các ứng dụng blockchain. Giao diện ứng dụng được tạo động dựa trên siêu dữ liệu hợp đồng thông minh và có thể phù hợp với mọi trường hợp sử dụng. Các ứng dụng khách cung cấp giao diện người dùng giao diện người dùng cho các ứng dụng blockchain hoàn chỉnh được tạo bởi Blockchain Workbench. Ứng dụng khách xác thực người dùng thông qua Azure Active Directory (Azure AD) và sau đó trình bày trải nghiệm người dùng phù hợp với bối cảnh kinh doanh của hợp đồng thông minh. Trải nghiệm người dùng cho phép các cá nhân được ủy quyền tạo ra các phiên bản hợp đồng thông minh mới và sau đó thể hiện khả năng thực hiện các loại giao dịch nhất định tại các điểm thích hợp trong quy trình kinh doanh mà hợp đồng thông minh đại diện.
+-	Trong ứng dụng web, người dùng được ủy quyền có thể truy cập bảng điều khiển dành cho quản trị viên. Bảng điều khiển có sẵn cho người dùng trong nhóm Quản trị viên trong Azure AD và cung cấp quyền truy cập vào chức năng sau:
+1.	Triển khai các hợp đồng thông minh do Microsoft cung cấp cho các tình huống phổ biến. Ví dụ, một kịch bản chuyển giao tài sản.
+2.	Tải lên và triển khai các hợp đồng thông minh của riêng họ.
+3.	Chỉ định một người dùng quyền truy cập vào hợp đồng thông minh trong bối cảnh của một vai trò cụ thể.
+
+**Gateway service API:**
+-	Blockchain Workbench bao gồm một dịch vụ API cổng dựa trên REST. Khi ghi vào một chuỗi khối, API sẽ tạo và gửi thông điệp đến một nhà môi giới sự kiện. Khi dữ liệu được API yêu cầu, các truy vấn sẽ được gửi đến cơ sở dữ liệu ngoài chuỗi. Cơ sở dữ liệu chứa một bản sao dữ liệu trên chuỗi và siêu dữ liệu cung cấp thông tin cấu hình và ngữ cảnh cho các hợp đồng thông minh được hỗ trợ. Các truy vấn trả về dữ liệu được yêu cầu từ bản sao ngoài chuỗi theo định dạng được thông báo bởi siêu dữ liệu cho hợp đồng.
+-	Các nhà phát triển có thể truy cập API dịch vụ để cổng xây dựng hoặc tích hợp các giải pháp blockchain mà không cần dựa vào các ứng dụng máy khách Blockchain Workbench.
+
+**Distributed ledger consumer:**
+-	Distributed ledger technology(DLT) chứa siêu dữ liệu cho các giao dịch được ghi vào blockchain. Người tiêu dùng truy xuất các tin nhắn và đẩy dữ liệu đến trình tạo giao dịch, người ký và bộ định tuyến.
+
+**Database consumer:**
+-	Cơ sở dữ liệu của người tiêu dùng nhận thông báo từ Service Bus và đẩy dữ liệu vào cơ sở dữ liệu đính kèm, chẳng hạn như cơ sở dữ liệu trong cơ sở dữ liệu Azure SQL.
+
+**Storage consumer:**
+-	Người tiêu dùng lưu trữ tin nhắn từ Service Bus và đẩy dữ liệu vào một bộ nhớ đính kèm. 
+VD: lưu trữ các tài liệu băm trong Azure Storage
+
+**Transaction builder and signer:**
+-	Nếu một tin nhắn từ tin nhắn của nhà môi giới nhắn đến cần được ghi vào blockchain, nó sẽ được xử lý bởi người tiêu dùng DLT. Người tiêu dùng DLT là một dịch vụ, lấy thông điệp chứa siêu dữ liệu cho một giao dịch mong muốn để thực hiện và sau đó gửi thông điệp đến người tạo và người ký giao dịch. Người xây dựng và người ký giao dịch tập hợp một giao dịch blockchain dựa trên dữ liệu và điểm đến blockchain mong muốn. Sau khi tập hợp, giao dịch được ký kết. Các khoá cá nhân được lưu trữ trong Azure Key Vault.
+-	Blockchain Workbench truy xuất khoá cá nhân thích hợp từ key Vault và ký giao dịch bên ngoài Key Vault. Sau khi được ký, giao dịch được gửi đến bộ định tuyến giao dịch và sổ cái.
+
+**DLT watcher:**
+-	Một trình theo dõi công nghệ sổ cái phân tán(DLT) giám sát các sự kiện xảy ra trên chuỗi khối gắn với Blockchain Workbench. Sự kiện phản ánh thông tin liên quan đến cá nhận và hệ thống.
+VD: việc tạo các phiên bản hợp đồng mới, thực hiện các giao dịch và thay đổi trạng thái. Các sự kiện được nắm bắt và gửi đến nhà môi giới thông điệp đi, vì vậy chúng có thể được tiêu thụ bởi người tiêu dùng hạ nguồn.
+
+**Azure SQL Database:**
+-	Cơ sở dữ liệu gắn liền với Blockchain Workbench lưu trữ các định nghĩa hợp đồng, siêu dữ liệu cấu hình và bản sao dữ liệu có thể truy cập SQL được lưu trữ trong blockchain. Dữ liệu này có thể dễ dàng được truy vấn, trực quan hoá hoặc phân tích bằng cách truy cập trực tiếp vào cơ sở dữ liệu. Các nhà phát triển và những người dùng khác có thể sử dụng cơ sở dữ liệu để báo cáo, phân tích hoặc các tích hợp tập trung vào dữ liệu khác.
+-	Lưu trữ ngoài chuỗi này cung cấp khả năng cho các tổ chức doanh nghiệp truy vấn dữ liệu trong SQL thay vì trong sổ cái blockchain. Ngoài ra, bằng cách tiêu chuẩn hoá trên một lược đồ tiêu chuẩn không thể hiện được các ngăn xếp công nghệ blockchain, lưu trữ ngoài chuỗi cho phép sử dụng lại các báo cáo và các hiện vật khác trong các dự án, kịch bản và tổ chức.
+
+**Azure Storage:**
+-	Azure Storage được sử dụng để lưu trữ các hợp đồng và siêu dữ liệu được liên kết với các hợp đồng.
+-	Từ đơn đặt hàng và vận đơn, đến hình ảnh được sử dụng trong tin tức và hình ảnh y tế, đến video bắt nguồn từ một chuỗi liên tục bao gồm camera và hình ảnh chuyển động chính, tài liệu đóng một vai trò trong nhiều tình huống tập trung vào blockchain. Các tài liệu không thích hợp để đặt trực tiếp trên blockchain.
+-	Blockchain Workbench hỗ trợ khả năng thêm tài liệu hoặc nội dùng phương tiện khác với logic nghiệp vụ blockchain. Hàm băm của tài liệu hoặc nội dung phương tiện được lưu trữ trong blockchain và tài liệu hoặc nội dung phương tiện thực tế được lưu trữ trong Azure Storage. Thông tin giao dịch liên quan được chuyển đến nhà môi giới tin nhắn đến, đóng gói, ký tên và chuyển đến chuỗi khối. Quá trình này kích hoạt các sự kiện, được chia sẻ thông qua trình môi giới thông báo gửi đi. SQL DB sử dụng thông tin này và gửi nó đến DB để truy vấn sau. Các hệ thống hạ nguồn cũng có thể sử dụng các sự kiện này để hoạt động khi thích hợp.
+
+
