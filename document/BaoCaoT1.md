@@ -140,3 +140,6 @@ contract SimpleAution{
     }
 }
 ```
+##Thư viện Azure Blockchain Workbench
+#Khái niệm Azure Blockchain Workbench:
+- Azure Blockchain Workbench Preview là một tập hợp các dịch vụ và khả năng của Azure được thiết kế để giúp bạn tạo và triển khai các ứng dụng blockchain để chia sẻ quy trình kinh doanh và dữ liệu với các tổ chức khác. Azure Blockchain Workbench cung cấp giàn giáo cơ sở hạ tầng để xây dựng các ứng dụng blockchain cho phép các nhà phát triển tập trung và việc tạo logic kinh doanh và hợp đồng thôg minh. Nó cũng giúp tạo các ứng dụng blockchain dễ dàng hơn bằng cách tích hợp 1 số dịch vụ và khả năng của Azure để giúp tự động hoá các nhiệm vụ phát triển chung.
