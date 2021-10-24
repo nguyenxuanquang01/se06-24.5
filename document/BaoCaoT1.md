@@ -73,6 +73,7 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
   - struct -> kiểu cấu trúc được sử dụng để biểu diễn một bản ghi
   - enum -> chứa các giá trị được xác định trước
   - array -> mảng lưu trữ dữ liệu cùng kiểu, length (lấy độ dài mảng) push (thêm phần tử vào cuối mảng trả lại mảng mới)
+- modifier trong solidity được sử dụng để kiểm tra điều kiện trước khi đoạn code bên trong phương thức được thực thi
 
 # Ví dụ đơn giản;
 
@@ -142,4 +143,4 @@ contract SimpleAution{
 ```
 ## Thư viện Azure Blockchain Workbench
 # Khái niệm Azure Blockchain Workbench:
-- Azure Blockchain Workbench Preview là một tập hợp các dịch vụ và khả năng của Azure được thiết kế để giúp bạn tạo và triển khai các ứng dụng blockchain để chia sẻ quy trình kinh doanh và dữ liệu với các tổ chức khác. Azure Blockchain Workbench cung cấp giàn giáo cơ sở hạ tầng để xây dựng các ứng dụng blockchain cho phép các nhà phát triển tập trung và việc tạo logic kinh doanh và hợp đồng thôg minh. Nó cũng giúp tạo các ứng dụng blockchain dễ dàng hơn bằng cách tích hợp 1 số dịch vụ và khả năng của Azure để giúp tự động hoá các nhiệm vụ phát triển chung.
+- Azure Blockchain Workbench Preview là một tập hợp các dịch vụ và khả năng của Azure được thiết kế để giúp bạn tạo và triển khai các ứng dụng blockchain để chia sẻ quy trình kinh doanh và dữ liệu với các tổ chức khác. Azure Blockchain Workbench cung cấp giàn giáo cơ sở hạ tầng để xây dựng các ứng dụng Blockchain cho phép các nhà phát triển tập trung và việc tạo logic kinh doanh và hợp đồng thông minh. Nó cũng giúp tạo các ứng dụng Blockchain dễ dàng hơn bằng cách tích hợp 1 số dịch vụ và khả năng của Azure để giúp tự động hoá các nhiệm vụ phát triển chung.
