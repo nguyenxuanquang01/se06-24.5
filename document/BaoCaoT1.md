@@ -56,10 +56,10 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
   - private : chỉ có thể truy cập từ hàm bên trong Contract
   - pure : không truy cậy hay thay đổi các thuộc tính của Contract
   - view : không thay đổi thuộc tính Contract
-- variable trong solidity 
+- variable trong solidity
   - state variables : các biến có giá trị được lưu trữ vĩnh viễn trong bộ lưu trữ Contract
   - local variables : biến cục bộ nằm ở bên trong function
-  - global variables : là loại biến đặc biệt tồn tại trong không gian làm việc toàn cục và cung cấp thông tin về Blockchain và các thuộc tính giao dịch 
+  - global variables : là loại biến đặc biệt tồn tại trong không gian làm việc toàn cục và cung cấp thông tin về Blockchain và các thuộc tính giao dịch
 - phạm vi variable trong solidity
   - public : có thể được truy cập nội bộ cũng như thông qua lời gọi. Hàm getter sẽ được tự động tạo
   - internal : chỉ có thể truy cập nội bộ từ Contract hoặc Contract bắt nguồn từ nó
@@ -67,9 +67,76 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 - kiểu dữ liệu : dựa trên kiểu dữ liệu của một biến, hệ điều hành phân bổ bộ nhớ và quyết định những gì có thể lưu trữ trong bộ nhớ dành riêng
   - bool -> true/false
   - int -> số nguyên
-  - uint -> số nguyên dương 
+  - uint -> số nguyên dương
   - address -> địa chỉ của account
-  - mapping -> là kiểu ánh xạ dạng key-value 
-  - struct -> kiểu cấu trúc được sử dụng để biểu diễn một bản ghi 
-  - enum -> chứa các giá trị được xác định trước 
+  - mapping -> là kiểu ánh xạ dạng key-value
+  - struct -> kiểu cấu trúc được sử dụng để biểu diễn một bản ghi
+  - enum -> chứa các giá trị được xác định trước
   - array -> mảng lưu trữ dữ liệu cùng kiểu, length (lấy độ dài mảng) push (thêm phần tử vào cuối mảng trả lại mảng mới)
+
+# Ví dụ đơn giản;
+
+### Dùng smartcontract trong một phiên đấu giá.
+
+```
+pragma solidity >= 0.7.0 <0.9.0;
+
+contract SimpleAution{
+    address payable public beneficiary;
+    uint public auctionEndTime;
+    uint public highestBid;
+    address public highestBider;
+    bool ended = false;
+
+    mapping (address => uint) public pendingReturns;
+    event highestBidIncrease(address bidder, uint amount);
+    event auctionEnded (address winner, uint amount);
+
+    constructor (uint _biddingTime, address payable _beneficiary){
+        beneficiary = _beneficiary;
+        auctionEndTime = block.timestamp + _biddingTime;
+    }
+
+    function bid () public payable {
+        if (block.timestamp > auctionEndTime){
+            revert("Phien dau gia ket thuc");
+        }
+        if (msg.value <= highestBid){
+            revert("Gia cua ban thap hon gia cao nhat");
+        }
+        if (highestBid != 0){
+            pendingReturns[highestBider] += highestBid;
+        }
+        highestBider = msg.sender;
+        highestBid = msg.value;
+        emit highestBidIncrease(msg.sender, msg.value);
+    }
+
+    function withdraw () public returns (bool){
+        uint amount = pendingReturns[msg.sender];
+        if (amount > 0) {
+            pendingReturns[msg.sender] = 0;
+
+            if (!payable (msg.sender).send(amount)){
+                pendingReturns[msg.sender] = amount;
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function auctionEnd() public {
+        if (ended){
+            revert("Phien dau da co the ket thuc");
+        }
+        if (block.timestamp < auctionEndTime){
+            revert("Phien dau gia chua ket thuc");
+        }
+
+        ended = true;
+        emit auctionEnded (highestBider, highestBid);
+
+        beneficiary.transfer(highestBid);
+    }
+}
+```
