@@ -78,7 +78,7 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 
 ### Dùng smartcontract trong một phiên đấu giá.
 
-```
+```solidity
 pragma solidity >= 0.7.0 <0.9.0;
 
 contract SimpleAution{
