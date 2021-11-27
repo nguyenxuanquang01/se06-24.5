@@ -1,4 +1,4 @@
-# Công Nghệ Blockchain Và Ứng Dụng Của Blockchain
+## Công Nghệ Blockchain Và Ứng Dụng Của Blockchain
 ## Đề Tài 24 - Nhóm 24.5
 ### Thành Viên :
 #### Nguyễn Xuân Quang (Leader)
