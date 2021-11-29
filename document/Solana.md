@@ -1,3 +1,3 @@
-#Solana là gì?
+# Solana là gì?
 Solana là một dự án mã nguồn mở triển khai một chuỗi khối mới, hiệu suất cao, không cần sự cho phép. Quỹ Solana có trụ sở tại Genenve, Thụy Sĩ và duy trì dự án mã nguồn mở.
 Solana có cơ sở dữ liệu tập trung có thể xử lý 710.000 giao dịch mỗi giây trên mạng gigabit tiêu chuẩn nếu các giao dịch trung bình không quá 176 byte. Cơ sở dữ liệu tập trung cũng có thể tái tạo và duy trì tính sẵn sàng cao mà không ảnh hưởng đáng kể đến tỷ lệ giao dịch đó bằng cách sử dụng kỹ thuât hệ thống phân tán được gọi là Optimistic Concurrency Control
