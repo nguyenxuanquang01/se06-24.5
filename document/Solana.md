@@ -1,4 +1,4 @@
-# * Solana là gì ?
+# Solana là gì ?
 
 ### Nội dung tìm hiểu Solana
 #### 1 - Khái niệm
