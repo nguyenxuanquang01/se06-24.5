@@ -1,13 +1,12 @@
 # Solana là gì?
 
 ### Nội dung tìm hiểu Solana
-1 - Khái niệm
-2 - Mục đích
-3 - SOL
+    1 - Khái niệm
+    2 - Mục đích
+    3 - SOL
 
 ### Khái niệm
-    - Solana là một dự án mã nguồn mở triển khai một chuỗi khối mới, hiệu suất cao, không cần sự cho phép. Quỹ Solana có trụ sở tại Genenve, Thụy Sĩ và duy trì dự án mã nguồn mở.
-      Cơ sở dữ liệu tập trung cũng có thể tái tạo và duy trì tính sẵn sàng cao mà không ảnh hưởng đáng kể đến tỷ lệ giao dịch đó bằng cách sử dụng kỹ thuât hệ thống phân tán được       gọi là Optimistic Concurrency Control
+    - Solana là một dự án mã nguồn mở triển khai một chuỗi khối mới, hiệu suất cao, không cần sự cho phép. Quỹ Solana có trụ sở tại Genenve, Thụy Sĩ và duy trì dự án mã nguồn mở.Cơ sở dữ liệu tập trung cũng có thể tái tạo và duy trì tính sẵn sàng cao mà không ảnh hưởng đáng kể đến tỷ lệ giao dịch đó bằng cách sử dụng kỹ thuât hệ thống phân tán được gọi là Optimistic Concurrency Control
     - Là một nền tảng Blockchain mã nguồn mở được xây dựng cho mục đích tối ưu hóa cho khả năng mở rộng, hỗ trợ các ứng dụng phi tập trung và Smart Constract
     - Cạnh tranh trực tiếp với Ethereum
     - Nó đạt được sự đồng thuật bằng cách sử dụng Proof of Stake (PoS) và Proof of History (PoH) 
