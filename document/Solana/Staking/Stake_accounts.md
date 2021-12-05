@@ -12,9 +12,9 @@ Mỗi tài khoản cổ phần có hai cơ quan ký tên được chỉ định 
 
 Cơ quan cổ phần được sử dụng để ký kết các giao dịch cho các hoạt động sau:
 
--Ủy quyền cổ phần
--Hủy kích hoạt ủy quyền giáo khu
--Tách tài khoản tiền cược, tạo tài khoản tiền cược mới với một phần tiền trong tài khoản đầu tiên
--Hợp nhất hai tài khoản cổ phần thành một
--Đặt cơ quan quyền lực cổ phần mới
+- Ủy quyền cổ phần
+- Hủy kích hoạt ủy quyền giáo khu
+- Tách tài khoản tiền cược, tạo tài khoản tiền cược mới với một phần tiền trong tài khoản đầu tiên
+- Hợp nhất hai tài khoản cổ phần thành một
+- Đặt cơ quan quyền lực cổ phần mới
 
