@@ -17,3 +17,4 @@ Cơ quan cổ phần được sử dụng để ký kết các giao dịch cho c
 -Tách tài khoản tiền cược, tạo tài khoản tiền cược mới với một phần tiền trong tài khoản đầu tiên
 -Hợp nhất hai tài khoản cổ phần thành một
 -Đặt cơ quan quyền lực cổ phần mới
+
