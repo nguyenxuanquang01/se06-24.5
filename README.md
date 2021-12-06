@@ -5,6 +5,13 @@
   - Đỗ Bá Trường
   - Tạ Quốc Khánh
   - Nguyễn Minh Tuấn
+### Nội Dung
+  - Tìm hiểu ngôn ngữ lập trình Solidity, tạo các Smart Constract đầu tiên trên hệ sinh thái Ethereum
+  - Setup Microsoft Azure Blockchain Workbech, cách sử dụng và ứng dụng để viết các Smart Constract
+  - Tìm hiểu hệ sinh thái Solana
+    - Clusters
+    - Wallets
+    - Staking 
 ### Công nghệ
   - Blockchain Ethereum
   - Blockchain Solana
