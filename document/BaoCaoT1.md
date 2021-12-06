@@ -137,10 +137,10 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
       ? : (Conditional ) Nếu điều kiện là đúng? Sau đó giá trị X: Ngược lại giá trị Y
       
 - vòng lặp :
-  - *while (biểu thức) {*
+    ```*while (biểu thức) {*
        *Các câu lệnh sẽ được thực thi nếu biểu thức là true*
     *}*
-    
+    ```
   - *do {*
        *Các câu lệnh được thực hiện;*
     *} while (biểu thức);*
@@ -152,8 +152,8 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
        - Câu lệnh lặp trong đó bạn có thể tăng hoặc giảm bộ đếm của mình.
        - Bạn có thể đặt tất cả ba phần trong một dòng duy nhất được phân tách bằng dấu chấm phẩy.)
   - kiểm soát vòng lặp :
-      - break :Câu lệnh break , được giới thiệu ngắn gọn với câu lệnh switch , được sử dụng để thoát khỏi một vòng lặp sớm, thoát ra khỏi các dấu ngoặc nhọn bao quanh.
-      - continue :Câu lệnh continue yêu cầu trình thông dịch bắt đầu ngay lập tức lần lặp tiếp theo của vòng lặp và bỏ qua khối mã còn lại. Khi gặp câu lệnh continue , luồng chương trình chuyển đến biểu thức kiểm tra vòng lặp ngay lập tức và nếu điều kiện vẫn đúng, thì nó bắt đầu lặp tiếp theo, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
+      - *break* : Câu lệnh break , được giới thiệu ngắn gọn với câu lệnh switch , được sử dụng để thoát khỏi một vòng lặp sớm, thoát ra khỏi các dấu ngoặc nhọn bao quanh.
+      - *continue* : Câu lệnh continue yêu cầu trình thông dịch bắt đầu ngay lập tức lần lặp tiếp theo của vòng lặp và bỏ qua khối mã còn lại. Khi gặp câu lệnh continue , luồng chương trình chuyển đến biểu thức kiểm tra vòng lặp ngay lập tức và nếu điều kiện vẫn đúng, thì nó bắt đầu lặp tiếp theo, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
 
 - câu lệnh điều kiện :
   - *if* : Ở đây, một biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho sẽ được thực thi. Nếu biểu thức sai, thì không câu lệnh nào không được thực thi. Hầu hết các trường hợp, bạn sẽ sử dụng các toán tử so sánh trong khi đưa ra quyết định.
