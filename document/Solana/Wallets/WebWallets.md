@@ -16,7 +16,7 @@
 - Sollet là một ví web không quản lý được tạo bởi nhóm Project Serum, Sollet có thể được sử dụng để gửi và nhận SOL và bất kỳ token SPL nào
 
 #### MathWallet
-[mathwallet.org/vi-vn/](https://mathwallet.org/vi-vn/)
+[mathwallet.org](https://mathwallet.org/vi-vn/)
 - MathWallet hỗ trợ địa chỉ ví để gửi và nhận token SOL và SPL thông qua browser extension và giao diện ví web của nó
 
 #### BitKeep
