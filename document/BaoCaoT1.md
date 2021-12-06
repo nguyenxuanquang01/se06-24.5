@@ -137,15 +137,22 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
       ? : (Conditional ) Nếu điều kiện là đúng? Sau đó giá trị X: Ngược lại giá trị Y
       
 - vòng lặp :
-    ```*while (biểu thức) {*
-       *Các câu lệnh sẽ được thực thi nếu biểu thức là true*
-    *}*
     ```
-  - *do {*
-       *Các câu lệnh được thực hiện;*
-    *} while (biểu thức);*
+    while (biểu thức) {
+       Các câu lệnh sẽ được thực thi nếu biểu thức là true
+    }
+    ```
+    ```
+    do {
+       Các câu lệnh được thực hiện;
+    } while (biểu thức);
+    ```
       - (Lưu ý: Vòng lặp do ... while cũng tương tự như vòng lặp while ngoại trừ việc kiểm tra điều kiện xảy ra ở phần cuối của vòng lặp. Điều này có nghĩa là vòng lặp sẽ luôn được thực hiện ít nhất một lần, ngay cả khi điều kiện sai .)    
-  - *for (tạo vòng lặp; lệnh kiểm tra; lệnh lặp) {Các câu lệnh sẽ được thực thi nếu điều kiện kiểm tra là đúng}*
+  ```
+  for (tạo vòng lặp; lệnh kiểm tra; lệnh lặp) {
+    Các câu lệnh sẽ được thực thi nếu điều kiện kiểm tra là đúng
+  }
+  ```
        - (Lưu ý:Vòng lặp for là hình thức nhỏ gọn nhất của vòng lặp. Nó bao gồm ba phần quan trọng sau:
        - Khởi tạo vòng lặp nơi chúng tôi khởi tạo bộ đếm của mình thành giá trị bắt đầu. Câu lệnh khởi tạo được thực hiện trước khi bắt đầu vòng lặp.
        - Câu lệnh kiểm tra sẽ kiểm tra xem một điều kiện đã cho có đúng hay không. Nếu điều kiện là đúng, thì mã được đưa ra bên trong vòng lặp sẽ được thực thi, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
@@ -157,24 +164,30 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 
 - câu lệnh điều kiện :
   - *if* : Ở đây, một biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho sẽ được thực thi. Nếu biểu thức sai, thì không câu lệnh nào không được thực thi. Hầu hết các trường hợp, bạn sẽ sử dụng các toán tử so sánh trong khi đưa ra quyết định.
-    - *if(biểu thức) {*                                                                                                                                                                     *Các câu lệnh sẽ được thực thi nếu biểu thức là đúng*                                                                                                                          *}  
+      ```
+      if(biểu thức) {                                                                                                                                                                     Các câu lệnh sẽ được thực thi nếu biểu thức là đúng
+      }
+      ```
   - *if-else* :Ở đây biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho trong khối 'if' sẽ được thực thi. Nếu biểu thức sai, thì (các) câu lệnh đã cho trong khối khác sẽ được thực thi
-    - *if (biểu thức) {*
-        *Các câu lệnh sẽ được thực thi nếu biểu thức là true*
-      *} else {*
-        *Các câu lệnh sẽ được thực thi nếu biểu thức là false*
-      *}*
+      ```
+      if (biểu thức) {
+        Các câu lệnh sẽ được thực thi nếu biểu thức là true
+      } else {
+        Các câu lệnh sẽ được thực thi nếu biểu thức là false
+      }
+      ```
     
   - *if-else if* :Các câu lệnh được thực thi dựa trên điều kiện đúng, nếu không có điều kiện nào là đúng thì khối else được thực thi.
-      - *if (biểu thức 1) {*
-          *Các câu lệnh sẽ được thực thi nếu biểu thức 1 là true*
-        *} else if (biểu thức 2) {*
-          *Các câu lệnh sẽ được thực thi nếu biểu thức 2 là true*
-        *} else if (biểu thức 3) {*
-          *Các câu lệnh sẽ được thực thi nếu biểu thức 3 là true*
-        *} else {*
-          *Các câu lệnh sẽ được thực thi nếu không có biểu thức nào là đúng*
-        *}*
+        if (biểu thức 1) {
+          Các câu lệnh sẽ được thực thi nếu biểu thức 1 là true
+        } else if (biểu thức 2) {
+          Các câu lệnh sẽ được thực thi nếu biểu thức 2 là true
+        } else if (biểu thức 3) {
+          Các câu lệnh sẽ được thực thi nếu biểu thức 3 là true
+        } else {
+          Các câu lệnh sẽ được thực thi nếu không có biểu thức nào là đúng
+        }
+        ```
 
 # Ví dụ đơn giản;
 
