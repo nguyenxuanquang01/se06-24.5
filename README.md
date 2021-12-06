@@ -8,6 +8,7 @@
 ### Công nghệ
   - Blockchain Ethereum
   - Blockchain Solana
+  - Microsoft Azure Blockchain Workbench
 ### Ngôn ngữ lập trình
   - Solidity
 ### Công cụ sử dụng
