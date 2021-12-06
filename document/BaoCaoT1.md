@@ -10,6 +10,10 @@ Toàn bộ hoạt động của Smart Contract được thực hiện một các
 
 Hợp đồng thông minh hoạt động như một chương trình tất định. Nó thực thi một tác vụ cụ thể trong trường hợp thỏa mãn các điều kiện nhất định. Do đó hợp đồng thông minh tuân theo các câu lệnh "nếu... thì...". Trên mạng Ethereum, hợp đồng thông minh chịu trách nhiệm thực thi và quả lí các hoạt động diễn ra trên blockchain. Về cơ bản, hợp đồng thông minh Ethereum bao gồm một mã hợp đồng và hai khóa công khai. Khóa công khai thứ nhất là khóa do người tạo hợp đồng cung cấp. Khóa còn lại đại diện cho chính hợp đồng, khóa này có vài trò như một mã định danh kỹ thuật số duy nhất cho mỗi hợp đồng thông minh.
 
+Trong một hợp đồng thông minh, có thể có nhiều quy định cần thiết để thỏa mãn những người tham gia rằng nhiệm vụ sẽ được hoàn thành một cách mỹ mãn. Để thiết lập các điều khoản, người tham gia phải xác định cách các giao dịch và dữ liệu của họ được đại diện trên blockchain, đồng ý về các quy tắc “if/when...then…” chi phối các giao dịch đó, khám phá tất cả các ngoại lệ có thể xảy ra và xác định khuôn khổ để giải quyết tranh chấp .
+
+Sau đó, hợp đồng thông minh có thể được lập trình bởi nhà phát triển - mặc dù ngày càng có nhiều tổ chức sử dụng blockchain cho doanh nghiệp cung cấp các mẫu, giao diện web và các công cụ trực tuyến khác để đơn giản hóa cấu trúc hợp đồng thông minh.
+
 ### Ví dụ về hợp đồng thông minh
 
 Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả tiền thuê nhà bằng tiền điện tử qua Blockchain. Sau đó biên nhận sẽ được đưa vào một bản hợp đồng thông minh của chúng tôi; Tôi sẽ đưa bạn mật mã vào căn hộ vào một ngày nhất định. Nếu mật mã đó không đến đúng thời hạn giữa 2 bên thống nhất, hợp đồng thông minh sẽ trả lại tiền. Nếu nó đến trước hạn, hệ thống sẽ giữ lại cả tiền và mật mã cho đến kì hạn. Hệ thống hoạt động dựa trên mệnh đề “If – Then” và được giám sát bởi hàng trăm người, vì vậy sẽ không thể có lỗi sai xảy ra trong việc giao nhận.
