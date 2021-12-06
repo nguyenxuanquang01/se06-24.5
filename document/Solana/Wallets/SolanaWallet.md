@@ -6,17 +6,17 @@
 
 #### Public Key (pubkey) 
 
-    - Được gọi là địa chỉ nhận của ví.
-    - Địa chỉ ví có thể được chia sẻ và hiển thị tự do.
-    - Khi một bên khác muốn gửi một số lượng tiền điện tử vào ví, họ cần biết địa chỉ nhận của ví 
-    - Tùy thuộc vào việc triển khai blockchain, địa chỉ cũng có thể được sử dụng để xem thông tin nhất định về ví, chẳng hạn như xem số dư nhưng không có khả năng thay đổi bất kỳ điều gì về ví hoặc rút bất kỳ token nào 
+- Được gọi là địa chỉ nhận của ví.
+- Địa chỉ ví có thể được chia sẻ và hiển thị tự do.
+- Khi một bên khác muốn gửi một số lượng tiền điện tử vào ví, họ cần biết địa chỉ nhận của ví 
+- Tùy thuộc vào việc triển khai blockchain, địa chỉ cũng có thể được sử dụng để xem thông tin nhất định về ví, chẳng hạn như xem số dư nhưng không có khả năng thay đổi bất kỳ điều gì về ví hoặc rút bất kỳ token nào 
 
 #### Private Key
 
-    - Được yêu cầu để ký kỹ thuật số bất kỳ giao dịch nào để gửi tiền điện tử đến một địa chỉ khác hoặc thực hiện bất kỳ thay đổi nào đối với ví
-    - Khóa riêng tư không bao giờ được chia sẻ
-    - Nếu ai đó có quyền truy cập vào khóa riêng tư của một ví thì họ có thể rút tất cả token của ví đó
-    - Nếu khóa cá nhân của ví bị mất, bất kỳ token nào đã được gửi đến địa chỉ của ví đó sẽ bị mất vĩnh viễn
+- Được yêu cầu để ký kỹ thuật số bất kỳ giao dịch nào để gửi tiền điện tử đến một địa chỉ khác hoặc thực hiện bất kỳ thay đổi nào đối với ví
+- Khóa riêng tư không bao giờ được chia sẻ
+- Nếu ai đó có quyền truy cập vào khóa riêng tư của một ví thì họ có thể rút tất cả token của ví đó
+- Nếu khóa cá nhân của ví bị mất, bất kỳ token nào đã được gửi đến địa chỉ của ví đó sẽ bị mất vĩnh viễn
 
 ### Solution
 
