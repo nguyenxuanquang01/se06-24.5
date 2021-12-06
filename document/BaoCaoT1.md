@@ -165,10 +165,12 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 - câu lệnh điều kiện :
   - *if* : Ở đây, một biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho sẽ được thực thi. Nếu biểu thức sai, thì không câu lệnh nào không được thực thi. Hầu hết các trường hợp, bạn sẽ sử dụng các toán tử so sánh trong khi đưa ra quyết định.
       ```
-      if(biểu thức) {                                                                                                                                                                     Các câu lệnh sẽ được thực thi nếu biểu thức là đúng
+      if(biểu thức) {
+        Các câu lệnh sẽ được thực thi nếu biểu thức là đúng
       }
       ```
-  - *if-else* :Ở đây biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho trong khối 'if' sẽ được thực thi. Nếu biểu thức sai, thì (các) câu lệnh đã cho trong khối khác sẽ được thực thi
+  - *if-else* : Ở đây biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho trong khối 'if' sẽ được thực thi. Nếu biểu thức sai, thì (các) câu lệnh đã cho trong khối khác sẽ được thực thi.
+ 
       ```
       if (biểu thức) {
         Các câu lệnh sẽ được thực thi nếu biểu thức là true
@@ -178,6 +180,7 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
       ```
     
   - *if-else if* :Các câu lệnh được thực thi dựa trên điều kiện đúng, nếu không có điều kiện nào là đúng thì khối else được thực thi.
+ 
         ```
         if (biểu thức 1) {
           Các câu lệnh sẽ được thực thi nếu biểu thức 1 là true
