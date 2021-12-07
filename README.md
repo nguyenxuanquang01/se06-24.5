@@ -7,6 +7,7 @@
   - Nguyễn Minh Tuấn
 ### Nội Dung
   - Tìm hiểu ngôn ngữ lập trình Solidity, tạo các Smart Constract đầu tiên trên hệ sinh thái Ethereum
+  - Các bước tạo ra đồng tiền điện tử 
   - Setup Microsoft Azure Blockchain Workbech, cách sử dụng và ứng dụng để viết các Smart Constract
   - Tìm hiểu hệ sinh thái Solana
     - Clusters
