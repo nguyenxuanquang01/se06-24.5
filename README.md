@@ -23,5 +23,3 @@
   - IDE Remix
   - Azure Blockchain Workbench
 ### Mục tiêu 
-
-(![blockchain](https://user-images.githubusercontent.com/74960507/144962401-78e080ca-5685-4b40-b864-123b12a52fcb.PNG))
