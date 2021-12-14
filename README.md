@@ -14,12 +14,11 @@
     - Wallets
     - Staking 
 ### Công nghệ
-  - Blockchain Ethereum
-  - Blockchain Solana
+  - Ethereum Blockchain
+  - Solana Blockchain
   - Microsoft Azure Blockchain Workbench
 ### Ngôn ngữ lập trình
   - Solidity
 ### Công cụ sử dụng
-  - IDE Remix
+  - IDE Remix Ethereum
   - Azure Blockchain Workbench
-### Mục tiêu 
