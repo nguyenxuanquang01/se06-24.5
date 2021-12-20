@@ -1,6 +1,6 @@
 ### Bình Chọn Hoặc Bầu Cử Sử Dụng Solidity
 
-
+![vote_sample](https://user-images.githubusercontent.com/74960507/146737638-81734f52-de0b-4240-915e-901d981c0e71.PNG)
 
 #### Information
 - Thông tin ứng viên được lưu trữ trên Blockchain, lưu trữ dạng ánh xạ địa chỉ mapping
