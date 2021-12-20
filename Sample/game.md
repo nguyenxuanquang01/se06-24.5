@@ -1,4 +1,4 @@
-#### Lưu trữ thông tin player trên Blockchain sử dụng Solidity
+### Lưu trữ thông tin user trên Blockchain sử dụng Solidity
 
 ![blockchain](https://user-images.githubusercontent.com/74960507/146699083-ad01d75e-fca6-4248-bfa0-570d238b48fb.PNG)
 
@@ -40,6 +40,7 @@ contract Game {
     }
 }
 ```
+
 ### Note
-- Khi có người chơi thiết lập thông tin cá nhân, thông tin ấy sẽ được lưu trên Blockchain
-- Sau 5000s sẽ update level của người chơi 
+- Khi có user thiết lập thông tin cá nhân, thông tin ấy sẽ được lưu trên Blockchain
+- Sau 5000s sẽ update level của user 
