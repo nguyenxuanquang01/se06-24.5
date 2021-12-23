@@ -1,23 +1,24 @@
-// Solidity.
-// Thư Viện Azure Blockchain Workbench
-
 # Hợp đồng thông minh
 
-### Hợp đồng thông minh là gì
+### Hợp đồng thông minh là gì ?
 
 Smart Contract (Hợp Đồng Thông Minh) là một thuật ngữ mô tả một bộ giao thức đặc biệt có khả năng tự động thực hiện các điều khoản, các thoả thuận giữa các bên trong hợp đồng (ở trường hợp này là các hệ thống máy tính) nhờ sự hỗ trợ của công nghệ Blockchain.
 
 Toàn bộ hoạt động của Smart Contract được thực hiện một cách tự động và không có sự can thiệp từ bên ngoài, hay thông qua một bên thứ ba trung gian. Những giao dịch được thực hiện bằng các hợp đồng thông minh rất minh bạch, có thể dễ dàng truy xuất được và không thể bị can thiệp hoặc đảo chiều. Các điều khoản trong Smart Contract tương đương với một hợp đồng có pháp lý và được ghi lại dưới ngôn ngữ của lập trình.
 
-### Hợp đồng hoạt động như thế nào
+### Hợp đồng hoạt động như thế nào ?
 
 Hợp đồng thông minh hoạt động như một chương trình tất định. Nó thực thi một tác vụ cụ thể trong trường hợp thỏa mãn các điều kiện nhất định. Do đó hợp đồng thông minh tuân theo các câu lệnh "nếu... thì...". Trên mạng Ethereum, hợp đồng thông minh chịu trách nhiệm thực thi và quả lí các hoạt động diễn ra trên blockchain. Về cơ bản, hợp đồng thông minh Ethereum bao gồm một mã hợp đồng và hai khóa công khai. Khóa công khai thứ nhất là khóa do người tạo hợp đồng cung cấp. Khóa còn lại đại diện cho chính hợp đồng, khóa này có vài trò như một mã định danh kỹ thuật số duy nhất cho mỗi hợp đồng thông minh.
+
+Trong một hợp đồng thông minh, có thể có nhiều quy định cần thiết để thỏa mãn những người tham gia rằng nhiệm vụ sẽ được hoàn thành một cách mỹ mãn. Để thiết lập các điều khoản, người tham gia phải xác định cách các giao dịch và dữ liệu của họ được đại diện trên blockchain, đồng ý về các quy tắc “if/when...then…” chi phối các giao dịch đó, khám phá tất cả các ngoại lệ có thể xảy ra và xác định khuôn khổ để giải quyết tranh chấp .
+
+Sau đó, hợp đồng thông minh có thể được lập trình bởi nhà phát triển - mặc dù ngày càng có nhiều tổ chức sử dụng blockchain cho doanh nghiệp cung cấp các mẫu, giao diện web và các công cụ trực tuyến khác để đơn giản hóa cấu trúc hợp đồng thông minh.
 
 ### Ví dụ về hợp đồng thông minh
 
 Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả tiền thuê nhà bằng tiền điện tử qua Blockchain. Sau đó biên nhận sẽ được đưa vào một bản hợp đồng thông minh của chúng tôi; Tôi sẽ đưa bạn mật mã vào căn hộ vào một ngày nhất định. Nếu mật mã đó không đến đúng thời hạn giữa 2 bên thống nhất, hợp đồng thông minh sẽ trả lại tiền. Nếu nó đến trước hạn, hệ thống sẽ giữ lại cả tiền và mật mã cho đến kì hạn. Hệ thống hoạt động dựa trên mệnh đề “If – Then” và được giám sát bởi hàng trăm người, vì vậy sẽ không thể có lỗi sai xảy ra trong việc giao nhận.
 
-### Lợi ích của smartcontract
+### Lợi ích của Smart Contract
 
 - **Tự do** : Không bị một cơ quan nào quả lí
 - **Phân tán** : Hợp đồng thông minh được sao chép và phân phối trong tất cả các nút của mạng Ethereum. Đây là một điểm khác biệt so với các giải pháp khác dựa trên các máy chủ tập trung.
@@ -50,30 +51,30 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 - EVM (Ethereum Virtal Machine) Là môi trường thời gian chạy các Smart Contract trong Ethereum
 - Contract trong Solidity tương tự như class trong Java hay Python, có thể đa kế thừa sử dụng từ khóa 'is'
 - Cấu trúc của một hàm trong Solidity : function function_name (parameter types) (internal | external | public | private) (pure | constant | view | payable) (returns (return types)) {}
-  - internal : chỉ có thể truy cập từ các hàm bên trong Contract hoặc từ Contract con
-  - external : có thể được truy cập từ Contract khác, bản thân Contract chứa hàm cũng có thể gọi nó thông qua 'this'
-  - public : có thể được gọi từ Contract (không cần sử dụng đến this) hoặc từ contract khác
-  - private : chỉ có thể truy cập từ hàm bên trong Contract
-  - pure : không truy cậy hay thay đổi các thuộc tính của Contract
-  - view : không thay đổi thuộc tính Contract
+  - *internal* : chỉ có thể truy cập từ các hàm bên trong Contract hoặc từ Contract con
+  - *external* : có thể được truy cập từ Contract khác, bản thân Contract chứa hàm cũng có thể gọi nó thông qua 'this'
+  - *public* : có thể được gọi từ Contract (không cần sử dụng đến this) hoặc từ contract khác
+  - *private* : chỉ có thể truy cập từ hàm bên trong Contract
+  - *pure* : không truy cậy hay thay đổi các thuộc tính của Contract
+  - *view* : không thay đổi thuộc tính Contract
 - variable trong solidity
   - state variables : các biến có giá trị được lưu trữ vĩnh viễn trong bộ lưu trữ Contract
   - local variables : biến cục bộ nằm ở bên trong function
   - global variables : là loại biến đặc biệt tồn tại trong không gian làm việc toàn cục và cung cấp thông tin về Blockchain và các thuộc tính giao dịch
 - phạm vi variable trong solidity
-  - public : có thể được truy cập nội bộ cũng như thông qua lời gọi. Hàm getter sẽ được tự động tạo
-  - internal : chỉ có thể truy cập nội bộ từ Contract hoặc Contract bắt nguồn từ nó
-  - private : chỉ truy cập nội bộ bên trong Contract
+  - *public* : có thể được truy cập nội bộ cũng như thông qua lời gọi. Hàm getter sẽ được tự động tạo
+  - *internal* : chỉ có thể truy cập nội bộ từ Contract hoặc Contract bắt nguồn từ nó
+  - *private* : chỉ truy cập nội bộ bên trong Contract
 - kiểu dữ liệu : dựa trên kiểu dữ liệu của một biến, hệ điều hành phân bổ bộ nhớ và quyết định những gì có thể lưu trữ trong bộ nhớ dành riêng
-  - bool -> true/false
-  - int -> số nguyên
-  - uint -> số nguyên dương
-  - address -> địa chỉ của account
-  - mapping -> là kiểu ánh xạ dạng key-value
-  - struct -> kiểu cấu trúc được sử dụng để biểu diễn một bản ghi
-  - enum -> chứa các giá trị được xác định trước
-  - array -> mảng lưu trữ dữ liệu cùng kiểu, length (lấy độ dài mảng) push (thêm phần tử vào cuối mảng trả lại mảng mới)
-- modifier trong solidity được sử dụng để kiểm tra điều kiện trước khi đoạn code bên trong phương thức được thực thi
+  - *bool* -> true/false
+  - *int* -> số nguyên
+  - *uint* -> số nguyên dương
+  - *address* -> địa chỉ của account
+  - *mapping* -> là kiểu ánh xạ dạng key-value
+  - *struct* -> kiểu cấu trúc được sử dụng để biểu diễn một bản ghi
+  - *enum* -> chứa các giá trị được xác định trước
+  - *array* -> mảng lưu trữ dữ liệu cùng kiểu, length (lấy độ dài mảng) push (thêm phần tử vào cuối mảng trả lại mảng mới)
+- *modifier* trong solidity được sử dụng để kiểm tra điều kiện trước khi đoạn code bên trong phương thức được thực thi
 - toán tử trong Solidity :
   - toán tử số học :
     -  +(phép cộng)
@@ -140,44 +141,61 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
       ? : (Conditional ) Nếu điều kiện là đúng? Sau đó giá trị X: Ngược lại giá trị Y
       
 - vòng lặp :
-  - while (biểu thức) {
+    ```
+    while (biểu thức) {
        Các câu lệnh sẽ được thực thi nếu biểu thức là true
     }
-    
-  - do {
+    ```
+    ```
+    do {
        Các câu lệnh được thực hiện;
     } while (biểu thức);
-      - (Lưu ý: Vòng lặp do ... while cũng tương tự như vòng lặp while ngoại trừ việc kiểm tra điều kiện xảy ra ở phần cuối của vòng lặp. Điều này có nghĩa là vòng lặp sẽ luôn được thực hiện ít nhất một lần, ngay cả khi điều kiện sai .)    
-  - for (tạo vòng lặp; lệnh kiểm tra; lệnh lặp) {Các câu lệnh sẽ được thực thi nếu điều kiện kiểm tra là đúng}
-       - (Lưu ý:Vòng lặp for là hình thức nhỏ gọn nhất của vòng lặp. Nó bao gồm ba phần quan trọng sau:
-       - Khởi tạo vòng lặp nơi chúng tôi khởi tạo bộ đếm của mình thành giá trị bắt đầu. Câu lệnh khởi tạo được thực hiện trước khi bắt đầu vòng lặp.
-       - Câu lệnh kiểm tra sẽ kiểm tra xem một điều kiện đã cho có đúng hay không. Nếu điều kiện là đúng, thì mã được đưa ra bên trong vòng lặp sẽ được thực thi, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
-       - Câu lệnh lặp trong đó bạn có thể tăng hoặc giảm bộ đếm của mình.
-       - Bạn có thể đặt tất cả ba phần trong một dòng duy nhất được phân tách bằng dấu chấm phẩy.)
+    ```
+    - (Lưu ý: Vòng lặp do ... while cũng tương tự như vòng lặp while ngoại trừ việc kiểm tra điều kiện xảy ra ở phần cuối của vòng lặp. Điều này có nghĩa là vòng lặp sẽ luôn được thực hiện ít nhất một lần, ngay cả khi điều kiện sai .)    
+    ```
+    for (tạo vòng lặp; lệnh kiểm tra; lệnh lặp) {
+      Các câu lệnh sẽ được thực thi nếu điều kiện kiểm tra là đúng
+    }
+    ```
+    - (Lưu ý:Vòng lặp for là hình thức nhỏ gọn nhất của vòng lặp. Nó bao gồm ba phần quan trọng sau:
+    - Khởi tạo vòng lặp nơi chúng tôi khởi tạo bộ đếm của mình thành giá trị bắt đầu. Câu lệnh khởi tạo được thực hiện trước khi bắt đầu vòng lặp.
+    - Câu lệnh kiểm tra sẽ kiểm tra xem một điều kiện đã cho có đúng hay không. Nếu điều kiện là đúng, thì mã được đưa ra bên trong vòng lặp sẽ được thực thi, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
+    - Câu lệnh lặp trong đó bạn có thể tăng hoặc giảm bộ đếm của mình.
+    - Bạn có thể đặt tất cả ba phần trong một dòng duy nhất được phân tách bằng dấu chấm phẩy.)
   - kiểm soát vòng lặp :
-      - break :Câu lệnh break , được giới thiệu ngắn gọn với câu lệnh switch , được sử dụng để thoát khỏi một vòng lặp sớm, thoát ra khỏi các dấu ngoặc nhọn bao quanh.
-      - continue :Câu lệnh continue yêu cầu trình thông dịch bắt đầu ngay lập tức lần lặp tiếp theo của vòng lặp và bỏ qua khối mã còn lại. Khi gặp câu lệnh continue , luồng chương trình chuyển đến biểu thức kiểm tra vòng lặp ngay lập tức và nếu điều kiện vẫn đúng, thì nó bắt đầu lặp tiếp theo, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
+    - *break* : Câu lệnh break , được giới thiệu ngắn gọn với câu lệnh switch , được sử dụng để thoát khỏi một vòng lặp sớm, thoát ra khỏi các dấu ngoặc nhọn bao quanh.
+    - *continue* : Câu lệnh continue yêu cầu trình thông dịch bắt đầu ngay lập tức lần lặp tiếp theo của vòng lặp và bỏ qua khối mã còn lại. Khi gặp câu lệnh continue , luồng chương trình chuyển đến biểu thức kiểm tra vòng lặp ngay lập tức và nếu điều kiện vẫn đúng, thì nó bắt đầu lặp tiếp theo, nếu không thì điều khiển sẽ ra khỏi vòng lặp.
 
 - câu lệnh điều kiện :
-  - if : Ở đây, một biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho sẽ được thực thi. Nếu biểu thức sai, thì không câu lệnh nào không được thực thi. Hầu hết các trường hợp, bạn sẽ sử dụng các toán tử so sánh trong khi đưa ra quyết định.
-    - if(biểu thức) {                                                                                                                                                                     Các câu lệnh sẽ được thực thi nếu biểu thức là đúng                                                                                                                             }  
-  - if-else :Ở đây biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho trong khối 'if' sẽ được thực thi. Nếu biểu thức sai, thì (các) câu lệnh đã cho trong khối khác sẽ được thực thi
-    - if (biểu thức) {
-      Các câu lệnh sẽ được thực thi nếu biểu thức là true
-      } else {
-      Các câu lệnh sẽ được thực thi nếu biểu thức là false
+  - *if* : Ở đây, một biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho sẽ được thực thi. Nếu biểu thức sai, thì không câu lệnh nào không được thực thi. Hầu hết các trường hợp, bạn sẽ sử dụng các toán tử so sánh trong khi đưa ra quyết định.
+      ```
+      if(biểu thức) {
+        Các câu lệnh sẽ được thực thi nếu biểu thức là đúng
       }
+      ```
+  - *if-else* : Ở đây biểu thức Solidity được đánh giá. Nếu giá trị kết quả là true, (các) câu lệnh đã cho trong khối 'if' sẽ được thực thi. Nếu biểu thức sai, thì (các) câu lệnh đã cho trong khối khác sẽ được thực thi.
+ 
+      ```
+      if (biểu thức) {
+        Các câu lệnh sẽ được thực thi nếu biểu thức là true
+      } else {
+        Các câu lệnh sẽ được thực thi nếu biểu thức là false
+      }
+      ```
     
-  - if-else if :Các câu lệnh được thực thi dựa trên điều kiện đúng, nếu không có điều kiện nào là đúng thì khối else được thực thi.
-      - if (biểu thức 1) {
-        Các câu lệnh sẽ được thực thi nếu biểu thức 1 là true
+  - *if-else if* :Các câu lệnh được thực thi dựa trên điều kiện đúng, nếu không có điều kiện nào là đúng thì khối else được thực thi.
+ 
+        ```
+        if (biểu thức 1) {
+          Các câu lệnh sẽ được thực thi nếu biểu thức 1 là true
         } else if (biểu thức 2) {
-        Các câu lệnh sẽ được thực thi nếu biểu thức 2 là true
+          Các câu lệnh sẽ được thực thi nếu biểu thức 2 là true
         } else if (biểu thức 3) {
-        Các câu lệnh sẽ được thực thi nếu biểu thức 3 là true
+          Các câu lệnh sẽ được thực thi nếu biểu thức 3 là true
         } else {
-        Các câu lệnh sẽ được thực thi nếu không có biểu thức nào là đúng
+          Các câu lệnh sẽ được thực thi nếu không có biểu thức nào là đúng
         }
+        ```
 
 # Ví dụ đơn giản;
 
