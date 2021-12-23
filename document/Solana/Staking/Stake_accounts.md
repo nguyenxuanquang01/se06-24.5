@@ -4,3 +4,4 @@ Tài khoản Stake trên Solana có thể được sử dụng để ủy quyề
 Mỗi tài khoản stake có một địa chỉ duy nhất có thể được sử dụng để tra cứu thông tin tài khoản trong dòng lệnh hoặc trong bất kỳ công cụ khám phá mạng nào. Tuy nhiên, không giống như địa chỉ ví trong đó chủ sở hữu cặp khóa của địa chỉ kiểm soát ví, cặp khóa được liên kết với địa chỉ tài khoản Stake không nhất thiết có bất kỳ quyền kiểm soát nào đối với tài khoản. Trên thực tế, một cặp khóa hoặc khóa cá nhân thậm chí có thể không tồn tại cho địa chỉ của tài khoản Stake.
 
 Lần duy nhất địa chỉ của tài khoản Stake có tệp cặp khóa là khi tạo tài khoản Stake bằng các công cụ dòng lệnh . Một tệp cặp khóa mới được tạo trước tiên chỉ để đảm bảo rằng địa chỉ của tài khoản Stake là mới và duy nhất.
+//
