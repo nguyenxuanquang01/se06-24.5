@@ -4,10 +4,7 @@ Tài khoản cổ phần trên Solana cũng hoạt động khác với tài kho�
 # Địa chỉ tài khoản
 Mỗi tài khoản stake có một địa chỉ duy nhất có thể được sử dụng để tra cứu thông tin tài khoản trong dòng lệnh hoặc trong bất kỳ công cụ khám phá mạng nào. Tuy nhiên, không giống như địa chỉ ví trong đó chủ sở hữu cặp khóa của địa chỉ kiểm soát ví, cặp khóa được liên kết với địa chỉ tài khoản Stake không nhất thiết có bất kỳ quyền kiểm soát nào đối với tài khoản. Trên thực tế, một cặp khóa hoặc khóa cá nhân thậm chí có thể không tồn tại cho địa chỉ của tài khoản Stake.
 
-<<<<<<< HEAD
-Lần duy nhất địa chỉ của tài khoản Stake có tệp cặp khóa là khi tạo tài khoản Stake bằng các công cụ dòng lệnh . Một tệp cặp khóa mới được tạo trước tiên chỉ để đảm bảo rằng địa chỉ của tài khoản Stake là mới và duy nhất.
-//
-=======
+
 Lần duy nhất địa chỉ của tài khoản Stake có tệp cặp khóa là khi tạo tài khoản Stake bằng các công cụ dòng lệnh . Một tệp cặp khóa mới được tạo trước tiên chỉ để đảm bảo rằng địa chỉ của tài khoản Stake là mới và duy nhất.Tìm hiểu Cơ quan Quản lý Tài khoản
 # Tìm hiểu Cơ quan Quản lý Tài khoản
 Một số loại tài khoản nhất định có thể có một hoặc nhiều cơ quan ký kết được liên kết với một tài khoản nhất định. Cơ quan tài khoản được sử dụng để ký các giao dịch nhất định cho tài khoản mà cơ quan này kiểm soát. Điều này khác với một số mạng blockchain khác, nơi chủ sở hữu cặp khóa được liên kết với địa chỉ của tài khoản kiểm soát tất cả hoạt động của tài khoản.
