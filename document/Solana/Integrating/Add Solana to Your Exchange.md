@@ -36,3 +36,17 @@ Các tham số `--entrypoint` và `--expected-genesis-hash` đều là các tham
  Các tham số tùy chọn cần xem xét:
  - `--private-rpc` ngăn không cho cổng RPC của bạn được sử dụng bởi các node khác/
  -  `--rpc ` cho phép bạn chỉ định một địa chỉ IP khác để liên kết cổng RPC.
+
+ ### Tự động khởi động lại và giám sát
+
+ Bạn lên cấu hình mỗi node của mình khởi động lại mỗi khi thoát, để đảm bảo bạn bỏ lỡ các ít dữ liệu càng tốt. Chạy phần mềm Solana như một hệ thống dịch vụ là một lựa chọn tuyệt vời.
+
+ Để giám sát, chúng tôi cung cấp `solana-watchtower`, cái mà có thể giám sát trình xác thực của bạn và phát hiện với quy trình `solana-validator` là không lành mạnh. Nó có thể được cấu hình trực tiếp để thông báo cho bạn thông qua Slack, Telegram, Discord, hoặc Twillio. Để chi tiết hơn, chạy `solana-watchtower --help`.
+```
+    solana-watchtower --validator-identity <YOUR VALIDATOR IDENTITY>
+```
+### Ledger Continuity
+
+Theo mặc định, mỗi một nút của bạn sẽ khởi động từ một snapshot do một trong những trình xác thực đã biết của bạn cung cấp. Snapshot phản ánh trạng thái hiện tại của chuỗi, nhưng không chứa lịch sử hoàn chỉnh của sổ cái. Nếu một trong những nút của bạn thoát ra và khởi động từ một snapshot mới, đó có thể có một khoảng trống trong sổ cái trên nút đó. Để ngăn chặn vấn đề này, cần thêm tham số `--no-snapshot-fetch` vào lệnh `solana-validator` của bạn để nhận dữ liệu sổ cái lịch sử thay vì snapshot.
+
+Không truyền truyền tham số `--no-snapshot-fetch` trong lần khởi động đầu tiên của bạn vì nó là không thể để khởi động nút từ khối gốc. Thay vào đó khởi động từ một snapshot trước và thêm tham số `--no-snapshot-fetch` để khởi động lại
