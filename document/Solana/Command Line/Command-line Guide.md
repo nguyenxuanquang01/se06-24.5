@@ -1,4 +1,4 @@
-##Command-line Guide
+## Command-line Guide
 
 Chúng ta sẽ mô tả cách sử dụng các công cụ dòng lệnh Solana để tạo ví, gửi cà nhận mã thông báo SOL và tham gia vào cụm bằng cách ủy quyền cổ phần.
 
