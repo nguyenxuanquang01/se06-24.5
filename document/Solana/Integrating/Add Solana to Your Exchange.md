@@ -14,7 +14,8 @@ Các nút Solana yêu cầu sức mạnh tính toán tương đối cao để x�
 Để chạy một node api:
 1. Cài đặt công cụ Solana command-line phù hợp
 2. Khởi động trình xác thực với ít nhất các thông số sau:
-``` solana-validator \
+```
+    solana-validator \
     --ledger <LEDGER_PATH> \
     --identity <VALIDATOR_IDENTITY_KEYPAIR> \
     --entrypoint <CLUSTER_ENTRYPOINT> \
@@ -24,4 +25,14 @@ Các nút Solana yêu cầu sức mạnh tính toán tương đối cao để x�
     --enable-rpc-transaction-history \
     --limit-ledger-size \
     --known-validator <VALIDATOR_ADDRESS> \
-    --only-known-rpc ```
+    --only-known-rpc 
+```
+Tùy chỉnh `--ledger` cho vị trí lưu trữ số cái mong muốn của bạn, và `--rpc-port` cổng bạn muốn xuất.
+Các tham số `--entrypoint` và `--expected-genesis-hash` đều là các tham số xác định cụm thể mà bạn đang tham gia.
+ Tham số `--limit-ledger-size` cho phép bạn xác định có bao nhiêu sổ cái đã chia nhỏ mà nút của bạn giữ lại trên đĩa. Nếu bạn không bao gồm tham số này, trình xác thực sẽ giữ toàn bộ sổ cái cho đến khi hết dung lượng đĩa. Giá trí mặc định cố gắng duy trì mức sử dụng đĩa số cái dưới 500GB. Có thể yêu cầu mức sử dụng đĩa nhiều hơn hoặc ít hơn bằng cách thêm đối số vào `--limit-ledger-size` nếu muốn. Kiểm tra `solana- validator --help` để biết giá trị giới hạn mặc định được sử dụng bởi `--limit-ledger-size`.
+ 
+ Việc chỉ định một hoặc nhiều tham số `--known-validator` có thể bảo vệ bạn khỏi việc khởi động từ một ảnh chụp nhanh độc hại.
+
+ Các tham số tùy chọn cần xem xét:
+ - `--private-rpc` ngăn không cho cổng RPC của bạn được sử dụng bởi các node khác/
+ -  `--rpc ` cho phép bạn chỉ định một địa chỉ IP khác để liên kết cổng RPC.
