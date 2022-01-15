@@ -49,4 +49,6 @@ Các tham số `--entrypoint` và `--expected-genesis-hash` đều là các tham
 
 Theo mặc định, mỗi một nút của bạn sẽ khởi động từ một snapshot do một trong những trình xác thực đã biết của bạn cung cấp. Snapshot phản ánh trạng thái hiện tại của chuỗi, nhưng không chứa lịch sử hoàn chỉnh của sổ cái. Nếu một trong những nút của bạn thoát ra và khởi động từ một snapshot mới, đó có thể có một khoảng trống trong sổ cái trên nút đó. Để ngăn chặn vấn đề này, cần thêm tham số `--no-snapshot-fetch` vào lệnh `solana-validator` của bạn để nhận dữ liệu sổ cái lịch sử thay vì snapshot.
 
-Không truyền truyền tham số `--no-snapshot-fetch` trong lần khởi động đầu tiên của bạn vì nó là không thể để khởi động nút từ khối gốc. Thay vào đó khởi động từ một snapshot trước và thêm tham số `--no-snapshot-fetch` để khởi động lại
+Không truyền truyền tham số `--no-snapshot-fetch` trong lần khởi động đầu tiên của bạn vì nó là không thể để khởi động nút từ khối gốc. Thay vào đó khởi động từ một snapshot trước và thêm tham số `--no-snapshot-fetch` để khởi động lại.
+
+Điều quan trọng cần lưu ý là số lượng sổ cái lịch sử có sẵn cho các nút của bạn từ phần còn lại của mạng bị giới hạn tại bất kì thời điểm nào.
