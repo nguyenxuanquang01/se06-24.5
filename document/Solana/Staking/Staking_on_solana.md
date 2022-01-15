@@ -37,6 +37,10 @@ Nhóm Solana không đưa ra khuyến nghị về cách giải thích thông tin
 
 Làm theo hướng dẫn của ví để ủy quyền của bạn cho trình xác thực bạn đã chọn.
 
+### Stake-o-matic hay còn gọi là Bots tự động ủy quyền
+
+Chương trình off-chain này quản lý một lượng lớn các trình xác thực do một cơ quan trung ương đặt cọc. Solana Foundation sử dụng một bot tự động ủy quyền để thường xuyên ủy thác cổ phần của mình cho những người xác thực "không quá hạn" đáp ứng các yêu cầu về hiệu suất được chỉ định. Thông tin thêm có thể được tìm thấy [trên thông báo chính thức](https://forums.solana.com/t/stake-o-matic-delegation-matching-program/790).
+
 # Chi tiết tài khoản đặt cọc
 
 Để biết thêm thông tin về các hoạt động và quyền được liên kết với tài khoản cổ phần, vui lòng xem [Tài khoản cổ phần](https://github.com/nguyenxuanquang01/se06-24.5/blob/master/document/Solana/Staking/Stake_accounts.md).
