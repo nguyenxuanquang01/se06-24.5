@@ -41,6 +41,10 @@ Làm theo hướng dẫn của ví để ủy quyền của bạn cho trình xá
 
 Chương trình off-chain này quản lý một lượng lớn các trình xác thực do một cơ quan trung ương đặt cọc. Solana Foundation sử dụng một bot tự động ủy quyền để thường xuyên ủy thác cổ phần của mình cho những người xác thực "không quá hạn" đáp ứng các yêu cầu về hiệu suất được chỉ định. Thông tin thêm có thể được tìm thấy [trên thông báo chính thức](https://forums.solana.com/t/stake-o-matic-delegation-matching-program/790).
 
+### Stake Pools
+
+Chương trình trực tuyến này gộp SOL lại với nhau do người quản lý đặt cược, cho phép người sở hữu SOL đặt cược và kiếm phần thưởng mà không cần quản lý tiền đặt cọc. Người dùng gửi SOL để đổi lấy mã thông báo SPL (đặt cược phái sinh) đại diện cho quyền sở hữu của họ trong nhóm cổ phần. Người quản lý hồ bơi đặt cọc SOL theo chiến lược của họ, có thể sử dụng một biến thể của bot tự động ủy quyền như được mô tả ở trên. Khi tiền đặt cược kiếm được phần thưởng, nhóm và mã thông báo nhóm tăng tương ứng về giá trị. Cuối cùng, chủ sở hữu mã thông báo chung có thể gửi mã thông báo SPL trở lại nhóm cổ phần để đổi SOL, do đó tham gia phân quyền với ít công việc hơn nhiều. Thông tin thêm có thể được tìm thấy tại [tài liệu về nhóm cổ phần SPL](https://spl.solana.com/stake-pool).
+
 # Chi tiết tài khoản đặt cọc
 
 Để biết thêm thông tin về các hoạt động và quyền được liên kết với tài khoản cổ phần, vui lòng xem [Tài khoản cổ phần](https://github.com/nguyenxuanquang01/se06-24.5/blob/master/document/Solana/Staking/Stake_accounts.md).
