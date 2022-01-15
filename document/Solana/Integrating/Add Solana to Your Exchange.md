@@ -49,6 +49,15 @@ Các tham số `--entrypoint` và `--expected-genesis-hash` đều là các tham
 
 Theo mặc định, mỗi một nút của bạn sẽ khởi động từ một snapshot do một trong những trình xác thực đã biết của bạn cung cấp. Snapshot phản ánh trạng thái hiện tại của chuỗi, nhưng không chứa lịch sử hoàn chỉnh của sổ cái. Nếu một trong những nút của bạn thoát ra và khởi động từ một snapshot mới, đó có thể có một khoảng trống trong sổ cái trên nút đó. Để ngăn chặn vấn đề này, cần thêm tham số `--no-snapshot-fetch` vào lệnh `solana-validator` của bạn để nhận dữ liệu sổ cái lịch sử thay vì snapshot.
 
-Không truyền truyền tham số `--no-snapshot-fetch` trong lần khởi động đầu tiên của bạn vì nó là không thể để khởi động nút từ khối gốc. Thay vào đó khởi động từ một snapshot trước và thêm tham số `--no-snapshot-fetch` để khởi động lại.
+Không truyền truyền tham số `--no-snapshot-fetch` trong lần khởi động đầu tiên của bạn vì nó là không thể để khởi động nút từ khối gốc. Thay vào đó khởi động từ một snapshot trước và thêm tham số `--no-snapshot-fetch` để khởi động lại
+### Minimizing Validator Port Exposure
+Trình xác thực yêu cầu mở các cổng UDP và TCP khác nhau cho lưu lượng đến từ tất cả các trình xác thực Solana khác. Mặc dù đây là chế độ hoạt động hiệu quả nhất và rất được khuyến khích, nhưng có thể hạn chế trình xác thực chỉ yêu cầu lưu lượng đến từ một trình xác thực Solana khác.
 
-Điều quan trọng cần lưu ý là số lượng sổ cái lịch sử có sẵn cho các nút của bạn từ phần còn lại của mạng bị giới hạn tại bất kì thời điểm nào.
+Đầu tiên hãy thêm đối số `--restricted-repair-only-mode`. Điều này sẽ khiến trình xác thực hoạt động ở chế độ hạn chế, nơi nó sẽ không nhận được các cú hích từ phần còn lại của trình xác thực và thay vào đó sẽ cần liên tục thăm dò ý kiến của các trình xác nhận khác cho các khối. Trình xác thực sẽ chỉ truyền các gói UDP đến các trình xác thực khác bằng các cổng _Gossip_ và _ServeR_ ("phục vụ sửa chữa") và chỉ nhận các gói UDP trên các cổng _Gossip_ và _Repair_ của nó.
+
+Cổng _Gossip_ là hai hướng và cho phép trình xác nhận của bạn tiếp tục liên lạc với phần còn lại của cụm. Trình xác thực của bạn truyền trên _ServeR_ để thực hiện các yêu cầu sửa chữa nhằm lấy các khối mới từ phần còn lại của mạng, vì Turbine hiện đã bị vô hiệu hóa. Trình xác thực của bạn sau đó sẽ nhận được phản hồi sửa chữa trên cổng _Sửa chữa_ từ các trình xác thực khác.
+
+Để hạn chế hơn nữa trình xác thực chỉ yêu cầu khối từ một hoặc nhiều trình xác thực, trước tiên hãy xác định pubkey nhận dạng cho trình xác thực đó và thêm các đối số `--gossip-pull-validator PUBKEY --repair-validator PUBKEY` cho mỗi PUBKEY. Điều này sẽ khiến trình xác thực của bạn tiêu hao tài nguyên trên mỗi trình xác thực mà bạn thêm vào, vì vậy hãy thực hiện điều này một cách tiết kiệm và chỉ sau khi tham khảo ý kiến của trình xác thực mục tiêu.
+
+Trình xác thực của bạn bây giờ chỉ nên giao tiếp với các trình xác thực được liệt kê rõ ràng và chỉ trên các cổng _Gossip_, _Repair_ và _ServeR_.
+
