@@ -159,4 +159,6 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc": "2.0","id":1,"m
   "id": 1
 }
 ```
+Các trường `preBalances` và `postBalance` cho phép bạn kiểm tra thay đổi số dư trong mỗi tài khoản mà không cần phân tích cú pháp toàn bộ giao dịch. Họ liệt kê số dư đầu và cuối của mỗi tài khoản trong lamports, được lập chỉ mục vào danh sách `accountKeys`. Ví dụ, địa chỉ tiền gửi nếu lãi suất là `47Sbuv6jL7CViK9F2NMW51aQGhfdpUu7WNvKyH645Rfi`, giao dịch này đại diện cho một sự chuyển nhượng của 218099990000-207099990000 = 11000000000 lamports = 11 SOL
 
+Nếu bạn cần thêm thông tin về kiểu giao dịch hoặc các chi tiết cụ thể khác, bạn có thể yêu cầu khối từ RPC ở định dạng nhị phân, và phân tích cú pháp nó bằng cách sử dụng SDK Rust hoặc SDK Javascript của họ.
