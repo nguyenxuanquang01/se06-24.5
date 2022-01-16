@@ -53,3 +53,26 @@ Trên thực tế, trình xác thực mainnet-beta do nhóm vận hành hiện �
 
 Cũng lưu ý rằng việc sử dụng lưu lượng truy cập internet đầu ra có thể cao, đặc biệt là đối với trường hợp chạy trình xác thực cố định.
 
+### Docker
+
+Việc chạy trình xác thực cho các cụm trực tiếp (bao gồm cả mainnet-beta) bên trong Docker không được khuyến nghị và thường không dược hỗ trợ. Điều này là do lo ngại về chi phí lưu trữ chung của Docker và sự suy giảm hiệu suất dẫn đến trừ khi được định cấu hình đặc biệt.
+
+Chúng ta chỉ sử dụng Docker cho mục đích phát triển. Docker Hub chứa hình ảnh cho tất cả các bản phát hành tại solanalabs / solana
+
+### Networking
+
+Dịch vụ Internet tối thiểu phải là 300Mbit / s đối xứng, thương mại. Ưu tiên 1GBit/s
+
+#### Port Forwarding
+
+Các cổng sau cần được mở cho internet cho cả đầu vào và đầu ra
+
+Bạn không nên chạy trình xác nhận sau NAT. Các nhà khai thác chọn làm như vậy nên cảm thấy thoải mái khi định cấu hình thiết bị mạng của họ và tự gỡ lỗi bất kỳ sự cố truyền tải nào.
+##### Required
+- 8000-10000 TCP/UDP - P2P protocols (gossip, turbine, repair, etc). This can be limited to any free 12 port range with `--dynamic-port-range`
+##### Optional
+
+Vì mục đích bảo mật, không nên mở các cổng sau vào internet trên trình xác thực mainnet-beta được đặt cọc.
+
+- 8899 TCP - JSONRPC qua HTTP. Thay đổi bằng `--rpc-port RPC_PORT ''
+- 8900 TCP - JSONRPC qua Websockets. Nguồn gốc. Sử dụng RPC_PORT + 1
