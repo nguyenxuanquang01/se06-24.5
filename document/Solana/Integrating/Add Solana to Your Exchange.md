@@ -177,7 +177,7 @@ Công cụ dòng lệnh của Solana cung cấp một lệnh đơn giản `solan
 solana transfer <USER_ADDRESS> <AMOUNT> --allow-unfunded-recipient --keypair <KEYPAIR> --url http://localhost:8899
 ```
 
-[Solana Javascript SDK](https://github.com/solana-labs/solana-web3.js) cung cấp một cách tiếp cận tương tự cho hệ sinh thái JS. Sử dụng `SystemProgramđể` tạo một giao dịch chuyển khoản và gửi nó bằng `sendAndConfirmTransaction` phương thức này.
+[Solana Javascript SDK](https://github.com/solana-labs/solana-web3.js) cung cấp một cách tiếp cận tương tự cho hệ sinh thái JS. Sử dụng `SystemProgram` để tạo một giao dịch chuyển khoản và gửi nó bằng `sendAndConfirmTransaction` phương thức này.
 
 #### Không đồng bộ
 
