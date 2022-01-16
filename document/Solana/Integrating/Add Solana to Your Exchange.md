@@ -162,3 +162,37 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc": "2.0","id":1,"m
 Các trường `preBalances` và `postBalance` cho phép bạn kiểm tra thay đổi số dư trong mỗi tài khoản mà không cần phân tích cú pháp toàn bộ giao dịch. Họ liệt kê số dư đầu và cuối của mỗi tài khoản trong lamports, được lập chỉ mục vào danh sách `accountKeys`. Ví dụ, địa chỉ tiền gửi nếu lãi suất là `47Sbuv6jL7CViK9F2NMW51aQGhfdpUu7WNvKyH645Rfi`, giao dịch này đại diện cho một sự chuyển nhượng của 218099990000-207099990000 = 11000000000 lamports = 11 SOL
 
 Nếu bạn cần thêm thông tin về kiểu giao dịch hoặc các chi tiết cụ thể khác, bạn có thể yêu cầu khối từ RPC ở định dạng nhị phân, và phân tích cú pháp nó bằng cách sử dụng SDK Rust hoặc SDK Javascript của họ.
+
+### Gửi Rút tiền
+
+Để đáp ứng yêu cầu rút SOL của người dùng, bạn phải tạo một giao dịch chuyển Solana và gửi nó đến nút api để được chuyển tiếp đến cụm của bạn.
+
+#### Đồng bộ
+
+Gửi chuyển giao đồng bộ đến cụm Solana cho phép bạn dễ dàng đảm bảo rằng chuyển giao thành công và được kết thúc bởi cụm.
+
+Công cụ dòng lệnh của Solana cung cấp một lệnh đơn giản `solana transfer` để tạo, gửi và xác nhận các giao dịch chuyển khoản. Theo mặc định, phương pháp này sẽ đợi và theo dõi tiến trình trên stderr cho đến khi giao dịch được cụm hoàn thành. Nếu giao dịch không thành công, nó sẽ thông báo bất kỳ lỗi giao dịch nào.
+
+```bash
+solana transfer <USER_ADDRESS> <AMOUNT> --allow-unfunded-recipient --keypair <KEYPAIR> --url http://localhost:8899
+```
+
+[Solana Javascript SDK](https://github.com/solana-labs/solana-web3.js) cung cấp một cách tiếp cận tương tự cho hệ sinh thái JS. Sử dụng `SystemProgramđể` tạo một giao dịch chuyển khoản và gửi nó bằng `sendAndConfirmTransaction` phương thức này.
+
+#### Không đồng bộ
+
+Để linh hoạt hơn, bạn có thể gửi chuyển khoản rút tiền không đồng bộ. Trong những trường hợp này, bạn có trách nhiệm xác minh rằng giao dịch đã thành công và đã được hoàn tất bởi cụm.
+
+**Lưu ý:** Mỗi giao dịch chứa một [blockhash gần đây](developing/programming-model/transactions.md#blockhash-format) để chỉ ra tính hoạt động của nó. Điều quan trọng là phải đợi cho đến khi blockhash này hết hạn trước khi thử lại chuyển khoản rút tiền mà dường như chưa được xác nhận hoặc hoàn tất bởi cụm. Nếu không, bạn có nguy cơ chi tiêu gấp đôi. Xem thêm về [hết hạn blockhash](#bl:ckhash-expiration) bên dưới.
+
+Đầu tiên, nhận một blockhash gần đây bằng cách sử dụng [`getFees` điểm cuối](developing/clients/jsonrpc-api.md#getfees) hoặc lệnh CLI:
+
+```bash
+solana fees --url http://localhost:8899
+```
+Trong công cụ dòng lệnh, chuyển --no-waitđối số để gửi chuyển một cách không đồng bộ và bao gồm blockhash gần đây của bạn với `--blockhash` đối số:
+
+```bash
+solana transfer <USER_ADDRESS> <AMOUNT> --no-wait --allow-unfunded-recipient --blockhash <RECENT_BLOCKHASH> --keypair <KEYPAIR> --url http://localhost:8899
+```
+Bạn cũng có thể xây dựng, ký và tuần tự hóa giao dịch theo cách thủ công và kích hoạt nó vào cụm bằng cách sử dụng [`sendTransaction` điểm cuối](developing/clients/jsonrpc-api.md#sendtransaction) JSON-RPC.
