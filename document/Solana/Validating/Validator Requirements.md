@@ -29,3 +29,27 @@ Tuy nhiên, để tham gia vào sự đồng thuận, cần có tài khoản b�
     - Không hoàn toàn cần thiết vào lúc này
     - Bo mạch chủ và bộ nguồn được chỉ định để thêm một hoặc nhiều GPU cao cấp trong đề suất tương lai.
 
+## RPC Node Recommendations
+
+Các khuyến nghị phần cứng ở trên nên được coi là mức tối thiểu nếu trình xác thực được sử dụng như một nút RPC. Để cung cấp đầy đủ chức năng và cải thiện độ tin cậy, cần thực hiện các điều chỉnh sau.
+
+- CPU 
+    - 16 cores/ 32 threads, hoặc nhiều hơn
+- RAM
+    - 256 GB, hoặc nhiều hơn
+- Disk
+    - Xem xét một đĩa sổ cái lớn hơn nếu cần có lịch sử giao dịch dài hơn
+    - Tài khoản và sổ cái không được lưu trữ trên cùng một đĩa
+
+## Virtual machines on Cloud Platforms
+
+Mặc dù bạn có thể chạy trình xác thực trên nền tảng điện toán đám mây, nhưng nó có thể không tiết kiệm chi phí về lâu dài.
+
+Tuy nhiên, Nó có thể thuận tiện khi chạy các nút api không bỏ phiếu trên các phiên bản VM để sử dụng nội bộ của riêng bạn. Trường hợp sử dụng này bao gồm các sàn giao dịch và dịch vụ được xây dựng trên Solana
+
+Trên thực tế, trình xác thực mainnet-beta do nhóm vận hành hiện đang chạy trên phiên bản GCE n2-standard-32 với SSD 2048 GB để thuật tiện cho việc vận hành.
+
+Đối với nên tảng đám mây khác, hãy chọn các loại phiên bản có thông số kỹ thuật tương tự.
+
+Cũng lưu ý rằng việc sử dụng lưu lượng truy cập internet đầu ra có thể cao, đặc biệt là đối với trường hợp chạy trình xác thực cố định.
+
