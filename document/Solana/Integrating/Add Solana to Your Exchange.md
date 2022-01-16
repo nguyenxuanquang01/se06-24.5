@@ -61,3 +61,24 @@ Cổng _Gossip_ là hai hướng và cho phép trình xác nhận của bạn ti
 
 Trình xác thực của bạn bây giờ chỉ nên giao tiếp với các trình xác thực được liệt kê rõ ràng và chỉ trên các cổng _Gossip_, _Repair_ và _ServeR_.
 
+### Setting up Deposit Accounts
+
+Tài khoản Solana không yêu cầu bất kì khởi tạo trên chuỗi nào; một khi chúng chứa một vài SOL, chúng tồn tại. Để thiết lập một tài khoản gửi tiền cho giao dịch của bạn, chỉ cần tạo cặp khóa Solana bằng bất kỳ công cụ ví nào của họ.
+
+Chúng ta lên sử dụng một tài khoản gửi tiền duy nhất cho mỗi người dùng.
+
+Tài khoản Solana được tính tiền thuê khi tạo và một lần cho mỗi thời kì, nhưng chúng có thể được miễn phí tiền thuê nếu chún có giá trị thuê 2 năm trong Solana. Để tìm số dư tối thiểu để được miễn thuê cho tài khoản tiền gửi của bạn. Hãy truy vấn bằng dòng này:
+```
+getMiniumBalanceForRentExemption
+
+curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc": "2.0","id":1,"method":"getMinimumBalanceForRentExemption","params":[0]}' localhost:8899
+
+{"jsonrpc":"2.0","result":890880,"id":1}
+```
+
+#### Offline Accounts
+
+Bạn có thể muốn giữ khóa của một hoặc nhiều tài khoản thu tiền ngoại tuyến để bảo mật cao hơn. Nếu vậy, bạn sẽ cần chuyển phải chuyển SOL sang các tài khoản nóng bằng các phương pháp ngoại tuyến của họ.
+
+
+
