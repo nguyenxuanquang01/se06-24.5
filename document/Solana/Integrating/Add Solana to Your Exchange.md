@@ -63,7 +63,7 @@ Trình xác thực của bạn bây giờ chỉ nên giao tiếp với các trì
 
 ### Setting up Deposit Accounts
 
-Tài khoản Solana không yêu cầu bất kì khởi tạo trên chuỗi nào; một khi chúng chứa một vài SOL, chúng tồn tại. Để thiết lập một tài khoản gửi tiền cho giao dịch của bạn, chỉ cần tạo cặp khóa Solana bằng bất kỳ công cụ ví nào của họ.
+Tài khoản Solana không yêu cầu bất kì khởi tạo trên chuỗi nào; một khi chúng chứa một vài SOL, chúng tồn tại. Để thiết lập một tài khoản gửi tiền cho sàn giao dịch của bạn, chỉ cần tạo cặp khóa Solana bằng bất kỳ công cụ ví nào của họ.
 
 Chúng ta lên sử dụng một tài khoản gửi tiền duy nhất cho mỗi người dùng.
 
@@ -80,5 +80,83 @@ curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc": "2.0","id":1,"m
 
 Bạn có thể muốn giữ khóa của một hoặc nhiều tài khoản thu tiền ngoại tuyến để bảo mật cao hơn. Nếu vậy, bạn sẽ cần chuyển phải chuyển SOL sang các tài khoản nóng bằng các phương pháp ngoại tuyến của họ.
 
+### Listening for Deposits
 
+Khi người dùng muốn gửi SOL vào sàn giao dịch của bạn, hãy hướng dẫn họ gửi một khoản đến một địa chỉ gửi tiền thích hợp.
+
+#### Poll for Blocks
+
+Để theo dõi tất cả các tài khoản tiền gửi cho sàn giao dịch của bạn, hãy thăm dò ý kiến cho từng khối được xác nhận và kiểm tra các địa chỉ quan tâm, sử dụng dịch vụ JSON-RPC của nút Solana API của bạn.
+
+- Để xác định khổi nào có sẵn, hãy gửi yêu cầu `getConfirmedBlocks`, chuyển khối cuối cùng mà bạn đã xử lý làm tham số vị trí bắt đầu:
+```
+curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc": "2.0","id":1,"method":"getConfirmedBlocks","params":[5]}' localhost:8899
+
+{"jsonrpc":"2.0","result":[5,6,8,9,11],"id":1}
+```
+Không phải mọi vị trí đều tạo ra một khối, vì vậy có thể có khoảng trống trong dãy số nguyên.
+- Đối với mỗi khối, để yêu cầu nội dung của nó, với yêu cầu getConfirmedBlock:
+```
+curl -X POST -H "Content-Type: application/json" -d '{"jsonrpc": "2.0","id":1,"method":"getConfirmedBlock","params":[5, "json"]}' localhost:8899
+
+{
+  "jsonrpc": "2.0",
+  "result": {
+    "blockhash": "2WcrsKSVANoe6xQHKtCcqNdUpCQPQ3vb6QTgi1dcE2oL",
+    "parentSlot": 4,
+    "previousBlockhash": "7ZDoGW83nXgP14vnn9XhGSaGjbuLdLWkQAoUQ7pg6qDZ",
+    "rewards": [],
+    "transactions": [
+      {
+        "meta": {
+          "err": null,
+          "fee": 5000,
+          "postBalances": [
+            2033973061360,
+            218099990000,
+            42000000003
+          ],
+          "preBalances": [
+            2044973066360,
+            207099990000,
+            42000000003
+          ],
+          "status": {
+            "Ok": null
+          }
+        },
+        "transaction": {
+          "message": {
+            "accountKeys": [
+              "Bbqg1M4YVVfbhEzwA9SpC9FhsaG83YMTYoR4a8oTDLX",
+              "47Sbuv6jL7CViK9F2NMW51aQGhfdpUu7WNvKyH645Rfi",
+              "11111111111111111111111111111111"
+            ],
+            "header": {
+              "numReadonlySignedAccounts": 0,
+              "numReadonlyUnsignedAccounts": 1,
+              "numRequiredSignatures": 1
+            },
+            "instructions": [
+              {
+                "accounts": [
+                  0,
+                  1
+                ],
+                "data": "3Bxs3zyH82bhpB8j",
+                "programIdIndex": 2
+              }
+            ],
+            "recentBlockhash": "7GytRgrWXncJWKhzovVoP9kjfLwoiuDb3cWjpXGnmxWh"
+          },
+          "signatures": [
+            "dhjhJp2V2ybQGVfELWM1aZy98guVVsxRCB5KhNiXFjCBMK5KEyzV8smhkVvs3xwkAug31KnpzJpiNPtcD5bG1t6"
+          ]
+        }
+      }
+    ]
+  },
+  "id": 1
+}
+```
 
