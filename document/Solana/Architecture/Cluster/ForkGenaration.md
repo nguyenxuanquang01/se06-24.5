@@ -26,4 +26,12 @@ với các mục PoH ảo đã tạo. Các tick trống này được tạo bở
 - Chỉ có hai phiên bản PoH khả thi trong thời gian biểu quyết: PoH có tích Tvà mục nhập do người dẫn đầu hiện tại tạo ra hoặc PoH chỉ với sticks. Phiên bản "just sticks" của 
 PoH có thể được coi là một sổ cái ảo, một sổ cái mà tất cả các nút trong cụm có thể lấy được từ lần đánh dấu cuối cùng trong vị trí trước đó.
 - Người xác nhận có thể bỏ qua fork ở các điểm khác ( ví dụ: từ người lãnh đạo sai ) hoặc cắt bỏ người lãnh đạo chịu trách nhiệm về đợt fork.
-- 
+- Người xác nhận bỏ phiếu dựa trên sự lựa chọn tham lam để tối đa hóa phần thưởng của họ.
+
+#### Validator's View
+
+##### Time Progression
+
+Sơ đồ bên dưới thể hiện chế độ xem của trình xác thực về luồng PoH với các nhánh có thể có theo thời gian. L1, L2, v.v. là các vị trí của nhà lãnh đạo và Es đại diện cho các mục nhập từ vị trí lãnh đạo đó trong vị trí của nhà lãnh đạo đó. Các xs chỉ biểu thị dấu tích và thời gian chảy xuống trong biểu đồ.
+
+
