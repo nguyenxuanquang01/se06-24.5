@@ -1,4 +1,4 @@
-### Bình Chọn Hoặc Bầu Cử Sử Dụng Solidity
+### Bình Chọn, Bầu Cử Sử Dụng Solidity
 
 ![vote_sample](https://user-images.githubusercontent.com/74960507/146737638-81734f52-de0b-4240-915e-901d981c0e71.PNG)
 
