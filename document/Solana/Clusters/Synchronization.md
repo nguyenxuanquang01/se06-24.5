@@ -1,3 +1,5 @@
+### Synchronization
+
 - Đồng bộ hóa nhanh chóng, đáng tin cậy là lý do lớn nhất khiến Solana có thể đạt được thông lượng cao như vậy. Các chuỗi khối truyền thống đồng bộ hóa trên các khối lớn 
 giao dịch được gọi là khối. Bằng cách đồng bộ hóa trên các khối, một giao dịch không thể được xử lý cho đến khi một khoảng thời gian, được gọi là "thời gian khối", đã trôi qua.
 Trong sự đồng thuận của Proof of Work, thời gian khối này cần rất lớn ( ~ 10 phút ) để giảm thiểu tỷ lệ cược của nhiều trình xác thực tạo ra một khối hợp lệ mới cùng một lúc.
