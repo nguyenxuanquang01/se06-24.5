@@ -2,7 +2,7 @@
 
 ![blockchain](https://user-images.githubusercontent.com/74960507/146699083-ad01d75e-fca6-4248-bfa0-570d238b48fb.PNG)
 
-### code Solidity
+### codessolidity
 ```
 pragma solidity >= 0.4.0 < 0.7.0;
 contract Game {
@@ -43,5 +43,5 @@ contract Game {
 ```
 
 ### Note
-- Khi có user thiết lập thông tin cá nhân, thông tin ấy sẽ được lưu trên Blockchain
+- Khi có user thiết lập thông tin cá nhân, thông tin đó sẽ được lưu trên Blockchain
 - Sau 5000s sẽ update level của user 
