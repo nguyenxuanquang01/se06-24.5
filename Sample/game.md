@@ -1,7 +1,8 @@
-### Lưu trữ thông tin user trên Blockchain sử dụng Solidity
+### Quản lý thông tin user trên Blockchain sử dụng Solidity
 
 ![blockchain](https://user-images.githubusercontent.com/74960507/146699083-ad01d75e-fca6-4248-bfa0-570d238b48fb.PNG)
 
+### code Solidity
 ```
 pragma solidity >= 0.4.0 < 0.7.0;
 contract Game {
