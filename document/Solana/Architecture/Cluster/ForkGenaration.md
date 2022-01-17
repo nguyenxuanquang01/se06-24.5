@@ -33,5 +33,3 @@ PoH có thể được coi là một sổ cái ảo, một sổ cái mà tất c
 ##### Time Progression
 
 Sơ đồ bên dưới thể hiện chế độ xem của trình xác thực về luồng PoH với các nhánh có thể có theo thời gian. L1, L2, v.v. là các vị trí của nhà lãnh đạo và Es đại diện cho các mục nhập từ vị trí lãnh đạo đó trong vị trí của nhà lãnh đạo đó. Các xs chỉ biểu thị dấu tích và thời gian chảy xuống trong biểu đồ.
-
-
