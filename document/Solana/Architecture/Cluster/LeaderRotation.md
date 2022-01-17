@@ -53,3 +53,11 @@ Những người đứng đầu có thể kiểm duyệt các giao dịch đặt
 Những người đứng đầu và người xác nhận phải sử dụng các khóa tạm thời để hoạt động và chủ sở hữu cổ phần ủy quyền cho người xác nhận thực hiện công việc với cổ phần của họ thông qua ủy quyền.
 
 Cụm sẽ có thể khôi phục sau khi mất tất cả các khóa tạm thời được sử dụng bởi những người đứng đầu và trình xác nhận, điều này có thể xảy ra thông qua một lỗ hổng phần mềm chung được chia sẻ bởi tất cả các nút. Chủ sở hữu cổ phần sẽ có thể bỏ phiếu trực tiếp bằng cách đồng ký vào một phiếu bầu của người xác nhận mặc dù cổ phần hiện được ủy quyền cho người xác nhận.
+
+## Appending Entries
+
+Thời gian tồn tại của lịch trình lãnh đạo được gọi là kỷ nguyên. Kỷ nguyên được chia thành các khe, trong đó mỗi khe có khoảng thời gian T PoH tích tắc.
+
+Một nhà lãnh đạo truyền các mục nhập trong thời gian của nó. Sau khi T đánh dấu, tất cả người xác nhận chuyển sang người lãnh đạo đã lên lịch tiếp theo. Người xác thực phải bỏ qua các mục nhập được gửi bên ngoài vị trí được chỉ định của người lãnh đạo.
+
+Tất cả các tick T phải được quan sát bởi người lãnh đạo tiếp theo để nó xây dựng các mục của riêng mình. Nếu các mục nhập không được quan sát (người lãnh đạo bị thất bại) hoặc các mục nhập không hợp lệ (người lãnh đạo bị lỗi hoặc độc hại), người lãnh đạo tiếp theo phải tạo ra các dấu tích để lấp đầy vị trí của người lãnh đạo trước đó. Lưu ý rằng người lãnh đạo tiếp theo nên thực hiện các yêu cầu sửa chữa song song và hoãn việc gửi tick cho đến khi chắc chắn rằng những người xác nhận khác cũng không theo dõi được các mục nhập của người lãnh đạo trước đó. Nếu một nhà lãnh đạo xây dựng sai trên các tick của riêng mình, người lãnh đạo theo sau nó phải thay thế tất cả các tick của nó.
