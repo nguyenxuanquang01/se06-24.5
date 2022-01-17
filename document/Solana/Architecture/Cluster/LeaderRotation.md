@@ -33,5 +33,23 @@ là tập hoạt động.
 4. Sử dụng hạt giống ngẫu nhiên để chọn các nút được tính theo tỷ trọng để tạo thứ tự có tỷ trọng theo tỷ trọng.
 5. Thứ tự này trở nên hợp lệ sau một số lượng tích tắc được cấu hình theo cụm.
 
+## Schedule Attack Vectors
 
+### Seed
 
+### Active Set
+
+Một người dẫn đầu có thể thiên vị nhóm hoạt động bằng cách kiểm duyệt phiếu bầu của người xác nhận. Có hai cách khả thi để các người dẫn đầu kiểm duyệt nhóm hoạt động:
+- Phớt lờ phiếu bầu từ trình xác thực.
+- Từ chối bỏ phiếu cho các khối có phiếu bầu từ trình xác thực.
+
+Để giảm khả năng bị kiểm duyệt, tập hợp hoạt động được tính toán ở ranh giới bù đắp lịch trình lãnh đạo trong một khoảng thời gian lấy mẫu tập hợp hoạt động. Khoảng thời gian lấy mẫu tập hợp hoạt động đủ dài để các phiếu bầu sẽ được thu thập bởi nhiều nhà lãnh đạo.
+
+### Staking 
+Những người đứng đầu có thể kiểm duyệt các giao dịch đặt cược mới hoặc từ chối xác thực các khối với số tiền đặt cược mới. Cuộc tấn công này tương tự như việc kiểm duyệt phiếu bầu của người xác nhận.
+
+### Validator operational key loss
+
+Những người đứng đầu và người xác nhận phải sử dụng các khóa tạm thời để hoạt động và chủ sở hữu cổ phần ủy quyền cho người xác nhận thực hiện công việc với cổ phần của họ thông qua ủy quyền.
+
+Cụm sẽ có thể khôi phục sau khi mất tất cả các khóa tạm thời được sử dụng bởi những người đứng đầu và trình xác nhận, điều này có thể xảy ra thông qua một lỗ hổng phần mềm chung được chia sẻ bởi tất cả các nút. Chủ sở hữu cổ phần sẽ có thể bỏ phiếu trực tiếp bằng cách đồng ký vào một phiếu bầu của người xác nhận mặc dù cổ phần hiện được ủy quyền cho người xác nhận.
