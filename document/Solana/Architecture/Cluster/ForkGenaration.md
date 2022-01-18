@@ -34,4 +34,4 @@ PoH có thể được coi là một sổ cái ảo, một sổ cái mà tất c
 
 Sơ đồ bên dưới thể hiện chế độ xem của trình xác thực về luồng PoH với các nhánh có thể có theo thời gian. L1, L2, v.v. là các vị trí của nhà lãnh đạo và Es đại diện cho các mục nhập từ vị trí lãnh đạo đó trong vị trí của nhà lãnh đạo đó. Các xs chỉ biểu thị dấu tích và thời gian chảy xuống trong biểu đồ.
 
-![](../image1.JPG)
+![](https://github.com/nguyenxuanquang01/se06-24.5/blob/master/document/Solana/images/image1.JPG)
