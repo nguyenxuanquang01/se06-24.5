@@ -10,3 +10,29 @@ hoạt động được gọi là rollback, theo đó trạng thái quay ngượ
 tối đa mà một ngã ba có thể quay trở lại được gọi là độ sâu lùi . Độ sâu khôi phục là số phiếu cần thiết để đạt được khóa tối đa.  Bất cứ khi nào người xác nhận bỏ phiếu, bất kỳ 
 điểm kiểm tra nào vượt quá độ sâu khôi phục sẽ không thể truy cập được. Có nghĩa là, không có tình huống nào mà trình xác thực sẽ cần phải quay lại quá độ sâu của quá trình khôi 
 phục. Do đó, nó có thể cắt bỏ một cách an toàn các ngã ba không thể truy cập và xóa tất cả các điểm kiểm tra vượt quá độ sâu khôi phục vào điểm kiểm tra gốc.
+
+## Active Forks
+- Một nhánh hoạt động giống như một chuỗi các điểm kiểm tra có chiều dài dài hơn ít nhất một lần so với độ sâu khôi phục. Fork ngắn nhất sẽ có chiều dài dài hơn độ sâu cuộn lùi chính xác một đoạn. Ví dụ:
+- Các chuỗi sau đây là các nhánh đang hoạt động :
+
+![image](https://user-images.githubusercontent.com/75937525/149903436-1d0f8cf4-c3d4-4222-a6d4-7e1e75d25862.png)
+
+
+1. {4, 2, 1}
+2. {5, 2, 1}
+3. {6, 3, 1}
+4. {7, 3, 1}
+
+## Pruning and Squashing
+- Người xác nhận có thể bỏ phiếu cho bất kỳ điểm kiểm tra nào trong cây. Trong sơ đồ trên, đó là mọi nút ngoại trừ các lá của cây. Sau khi bỏ phiếu, trình xác nhận sẽ lược bỏ các nút phân nhánh từ một khoảng cách xa hơn độ sâu khôi phục và sau đó tận dụng cơ hội để giảm thiểu việc sử dụng bộ nhớ của nó bằng cách thu gọn bất kỳ nút nào mà nó có thể đưa vào thư mục gốc.
+- Bắt đầu từ ví dụ trên, với độ sâu hồi lưu là 2, hãy xem xét một phiếu bầu cho 5 so với một phiếu cho 6. Đầu tiên, một phiếu bầu cho 5:
+
+![image](https://user-images.githubusercontent.com/75937525/149903769-77056327-88de-4687-89d5-3b041b566ea8.png)
+
+- Gốc mới là 2 và bất kỳ nhánh nào đang hoạt động không phải là con của 2 sẽ bị cắt bớt.
+
+Ngoài ra, một phiếu bầu cho 6:
+
+![image](https://user-images.githubusercontent.com/75937525/149903918-88b02b11-0ac2-44a5-9484-2efbe0884b23.png)
+
+- Cây vẫn có gốc là 1, vì nhánh hoạt động bắt đầu từ 6 chỉ cách gốc 2 điểm kiểm tra.
