@@ -1,0 +1,10 @@
+# Turbine Block Propagation
+
+Một cụm Solana sử dụng cơ chế lan truyền khối nhiều lớp được gọi là Turbine để phát các mẩu giao dịch tới tất cả các nút với số lượng thông báo trùng lặp tối thiểu. Cụm phân chia chính nó thành các tập hợp nhỏ của các nút, được gọi là các vùng lân cận. Mỗi nút chịu trách nhiệm chia sẻ bất kỳ dữ liệu nào mà nó nhận được với các nút khác trong vùng lân cận của nó, cũng như truyền tải dữ liệu tới một nhóm nhỏ các nút trong vùng lân cận khác. Bằng cách này, mỗi nút chỉ phải giao tiếp với một số lượng nhỏ các nút.
+
+Trong vị trí của nó, nút lãnh đạo phân phối các mẩu tin nhỏ giữa các nút trình xác thực trong vùng lân cận đầu tiên (lớp 0). Mỗi trình xác thực chia sẻ dữ liệu của nó trong vùng lân cận của nó, nhưng cũng truyền lại các mẩu tin đó đến một nút trong một số vùng lân cận trong lớp tiếp theo (lớp 1). Mỗi nút lớp-1 chia sẻ dữ liệu của chúng với các đồng nghiệp lân cận của chúng và truyền lại cho các nút ở lớp tiếp theo, v.v., cho đến khi tất cả các nút trong cụm đã nhận được tất cả các mẩu tin nhỏ.
+
+## Neighborhood Assignment - Weighted Selection
+Để fanout mặt phẳng dữ liệu hoạt động, toàn bộ cụm phải thống nhất về cách phân chia cụm thành các vùng lân cận. Để đạt được điều này, tất cả các nút trình xác nhận được công nhận (các đồng nghiệp của TVU) được sắp xếp theo tỷ lệ và được lưu trữ trong một danh sách. Sau đó, danh sách này được lập chỉ mục theo những cách khác nhau để tìm ra ranh giới vùng lân cận và truyền lại các đồng nghiệp. Ví dụ: người lãnh đạo sẽ chỉ cần chọn các nút đầu tiên để tạo nên lớp 0. Đây sẽ tự động là những người có cổ phần cao nhất, cho phép các phiếu bầu nặng nhất về với người lãnh đạo trước. Các nút lớp 0 và các nút lớp thấp hơn sử dụng cùng một logic để tìm các nút lân cận và các nút lớp tiếp theo của chúng.
+
+Để giảm khả năng bị tấn công vectơ, mỗi mảnh vụn được truyền qua một cây ngẫu nhiên của các vùng lân cận. Mỗi nút sử dụng cùng một tập hợp các nút đại diện cho cụm. Một cây ngẫu nhiên được tạo từ tập hợp cho mỗi mảnh bằng cách sử dụng một hạt giống được lấy từ id người dẫn đầu, vị trí và chỉ mục cắt nhỏ.
