@@ -17,6 +17,18 @@
 - Các giao dịch diễn ra trên mainnet sử dụng tiền điện tử gốc của mạng và được ghi lại trên sổ cái phân tán
 - Các giao thức blockchain mã nguồn mở như Ethereum và Bitcoin được thiết kế để có thể xác minh công khai và thực hiện các giao dịch xác thực
 - Mainnet trong tiền điện tử cung cấp một cách đáng tin cậy và hiệu quả để đánh giá mức độ thành công của bất kỳ dự án blockchain mới nổi nào
+- Điểm nhập tin đồn cho Mainnet Beta: `entrypoint.mainnet-beta.solana.com:8001`
+- Biến môi trường chỉ số cho Mainnet Beta:
+```bash
+export SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=mainnet-beta,u=mainnet-beta_write,p=password"
+```
+- URL RPC cho MainnetBeta: `https://api.mainnet-beta.solana.com`
+  - Giới hạn tỉ lệ:
+    - Số lượng yêu cầu tối đa trong 10 giây trên mỗi IP: 100
+    - Số lượng yêu cầu tối đa mỗi 10 giây trên mỗi IP cho một RPC: 40
+    - Kết nối đồng thời tối đa trên mỗi IP: 40
+    - Tốc độ kết nối tối đa trên 10 giây trên mỗi IP: 40
+    - Lượng dữ liệu tối đa mỗi 30 giây: 100 MB
 
 ### Devnet - Mạng lưới phát triển blockchain
 - Giao thức solana khẳng định rằng devnet hoạt động như một "sân chơi" cho những người trải nghiệm giao thức với tư cách là người dùng blockchain, chủ sở hữu token, nhà phát triển ứng dụng hoặc trình xác thực mạng.
