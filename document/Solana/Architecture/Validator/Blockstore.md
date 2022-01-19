@@ -17,3 +17,23 @@ Yêu cầu sửa chữa đối với các mẩu tin vụn gần đây được c
 3. Forks: Blockstore hỗ trợ truy cập ngẫu nhiên các mảnh vụn, vì vậy có thể hỗ trợ trình xác thực cần phải quay lại và phát lại từ điểm kiểm tra của Ngân hàng.
 
 4. Restart: Với việc cắt tỉa / chọn lọc thích hợp, Blockstore có thể được phát lại bằng cách liệt kê theo thứ tự các mục nhập từ vị trí 0. Logic của giai đoạn phát lại (nghĩa là giao dịch với các nhánh) sẽ phải được sử dụng cho các mục nhập gần đây nhất trong các Blockstore.
+
+## Blockstore Design
+
+1. Các mục nhập trong Blockstore được lưu trữ dưới dạng các cặp khóa-giá trị, trong dó khóa là chỉ mục vị trí được ghép nối và chỉ mục cắt nhỏ cho một mục nhập và giá trị là dữ liệu mục nhập. Ghi chú các chỉ mục được cắt nhỏ dựa trên 0 cho mỗi vị trí(tức là chúng tương đối với ví trị)
+
+2. Blockstore duy trì siêu dữ liệu cho từng vị trí, trong cấu trúc `SlotMeta` có chứa:
+- `slot_index` Chỉ mục của vị trí này.
+- `num_blocks` Số lượng khối trong một vị tris (được sử dụng để liên kết với một vị trí trước đó).
+- `consumed` Chỉ số băn nhỏ cao nhất `n`, sao cho với mọi `m < n`, tồn tại một mục băm nhỏ trong vị trí này với chỉ số băm nhỏ bằng `n` (tức là chỉ số băm nhỏ liên tiếp cao nhất).
+- `received` Chỉ số băm nhỏ nhận được cao nhất cho vị trí
+- `next_slot` Danh sách các vị trí trong tương lai mà vị trí này có thể kết nối với nhau. Được sử dụng khi xây dựng lại sổ cái để tìm các điểm rẽ nhánh có thể có.
+- `last_index`  Chỉ mục của mảnh vụn được gắn cờ là mảnh vụn cuối cùng cho vị trí này. Cờ này trên máy cắt nhỏ sẽ được người dẫn đầu đặt cho một vị trí khi họ đang truyền lá cờ cuối cùng cho một vị trí.
+- `is_connected` True iff mọi khối từ 0 ... slot tạo thành một chuỗi đầy đủ mà không có bất kỳ lỗ nào. Chúng ta có thể lấy được is_connected cho mỗi vị trí với các quy tắc sau. Gọi slot (n) là slot có chỉ số `n` và slot (n) .is_full () là true nếu slot có chỉ số `n` có tất cả các tick được mong đợi cho slot đó. Đặt is_connected (n) là câu lệnh rằng "slot (n) .is_connected là true". Sau đó:
+is_connected(0) is_connected(n+1) iff (is_connected(n) and slot(n).is_full()
+
+3. Chaining - Khi một phần nhỏ cho một vị trí `x` mới đến, chúng tôi kiểm tra số lượng khối (`num_blocks`) cho vị trí mới đó (thông tin này được mã hóa trong phần nhỏ). Sau đó, chúng tôi biết rằng chuỗi vị trí mới này sẽ chuyển sang vị trí `x - num_blocks`.
+
+4. Subcriptions - Blockstore ghi lại một tập hợp các vị trí đã được "đăng ký". Điều này có nghĩa là các mục nhập liên kết với các vị trí này sẽ được gửi trên kênh Blockstore để tiêu thụ bởi ReplayStage. Xem các  `Blockstore APIs` để biết thêm chi tiết.
+
+5. Update notifications - Blockstore thông báo cho người nghe khi slot (n) .is_connected được chuyển từ false thành true cho bất kỳ `n` nào.
