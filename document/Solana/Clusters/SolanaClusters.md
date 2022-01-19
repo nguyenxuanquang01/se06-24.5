@@ -56,6 +56,13 @@ solana config set --url https://api.devnet.solana.com
 export SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=tds,u=testnet_write,p=c4fa841aa918bf8274e3e2a44d77568d9861b3ea"
 ```
 - URL RPC cho Testnet: `https://api.testnet.solana.com`
+  - Giới hạn tỉ lệ:
+    - Số lượng yêu cầu tối đa trong 10 giây trên mỗi IP: 100
+    - Số lượng yêu cầu tối đa mỗi 10 giây trên mỗi IP cho một RPC: 40
+    - Kết nối đồng thời tối đa trên mỗi IP: 40
+    - Tốc độ kết nối tối đa trên 10 giây trên mỗi IP: 40
+    - Lượng dữ liệu tối đa mỗi 30 giây: 100 MB
+
 - Ví dụ về cấu hình dòng lệnh solana:
 
 ```bash
