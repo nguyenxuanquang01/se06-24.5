@@ -43,6 +43,19 @@ solana config set --url https://api.devnet.solana.com
 - Các giao dịch trên Testnet chỉ là mô phỏng - tiền điện tử không có giá trị thực bên ngoài môi trường Testnet
 - Động lực này cung cấp môi trường lý tưởng để kiểm tra các Smart Constract và các ứng dụng phi tập trung (dApps)
 - Hơn nữa Testnet cung cấp một môi trường "đồng hồ cát" để các dev có thể liên tục điều chỉnh và cải thiện phiên bản trực tiếp về dự án trước khi khởi chạy trên mạng chính 
+- Điểm nhập tin đồn cho Testnet: `entrypoint.devnet.solana.com:8001`
+- Biến môi trường chỉ số cho Testnet:
+
+```bash
+export SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=tds,u=testnet_write,p=c4fa841aa918bf8274e3e2a44d77568d9861b3ea"
+```
+- URL RPC cho Testnet: `https://api.testnet.solana.com`
+- Ví dụ về cấu hình dòng lệnh solana:
+
+```bash
+solana config set --url https://api.testnet.solana.com
+```
+
 ### Creating a Cluster
 - Trước khi bắt đầu bất kì trình xác thực nào, trước tiên người ta cần tạo một cấu hình generis. Cấu hình tham chiếu đến hai khoá công khai, một khoá cơ bản và một trình xác thực bootstrap. Trình xác thực giữ khoá riêng của trình xác thực bootstrap chịu trách nhiệm bổ sung các mục nhập đầu tiên vào cửa sổ cái. Nó khởi tạo trạng thái bên trong bằng tài khoản của người đúc tiền. Tài khoản đó sẽ giữ số lượng mã thông báo gốc được cấu hình genesis xác định. Sau đó, trình xác thực thứ hai liên hệ với trình xác nhận bootstrap để đăng ký làm trình xác nhận. Các trình xác thực bổ sung sau đó đăng ký với bất kỳ thành viên đã đăng ký nào của cụm.
 - Người xác nhận sẽ nhận tất cả các bài dự thi từ người đứng đầu và gửi phiếu xác nhận các bài dự thi đó là hợp lệ. Sau khi bỏ phiếu, người xác nhận sẽ lưu trữ các mục nhập đó. Khi trình xác thực nhận thấy có đủ số lượng bản sao tồn tại, nó sẽ xóa bản sao của nó.
