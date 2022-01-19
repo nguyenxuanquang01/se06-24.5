@@ -17,6 +17,16 @@ StakeState::Stake::voter_pubkey.
 vai trò là người giám sát phần thưởng và cung cấp cho việc ủy quyền thụ động. Chương trình Stake chịu trách nhiệm trả phần thưởng cho người đặt và người bỏ phiếu khi cho thấy rằng 
 đại biểu của người xếp đã tham gia xác thực sổ cái.
 1. VoteState
+  VoteState là trạng thái hiện tại của tất cả các phiếu bầu mà người xác nhận đã gửi cho mạng. VoteState chứa thông tin trạng thái sau:
+  - votes - Cấu trúc dữ liệu phiếu bầu đã nộp.
+  - credits - Tổng số phần thưởng mà chương trình Bình chọn này đã tạo ra trong suốt thời gian hoạt động của nó.
+  - root_slot - Khe cuối cùng để đạt được cam kết khóa đầy đủ cần thiết để nhận phần thưởng.
+  - commission- Hoa hồng do VoteState này thực hiện cho bất kỳ phần thưởng nào được yêu cầu bởi các tài khoản Staker của người chơi. Đây là mức trần phần trăm của phần thưởng.
+  - Account::lamports - Số lượng đèn tích lũy được từ hoa hồng. Đây không được tính là tiền đặt cọc.
+  - authorized_voter- Chỉ có danh tính này mới được phép gửi phiếu bầu. Trường này chỉ có thể được sửa đổi bởi danh tính này.
+  - node_pubkey - Nút Solana bỏ phiếu trong tài khoản này.
+  - authorized_withdrawer - danh tính của pháp nhân phụ trách các báo cáo của tài khoản này, tách biệt với địa chỉ của tài khoản và người ký biểu quyết được ủy quyền.
+
 2. VoteInstruction::Initialize(VoteInit)
 3. VoteInstruction::Authorize(Pubkey, VoteAuthorize)
 4. VoteInstruction::Vote(Vote)
