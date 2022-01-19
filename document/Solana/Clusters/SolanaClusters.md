@@ -22,6 +22,19 @@
 - Giao thức solana khẳng định rằng devnet hoạt động như một "sân chơi" cho những người trải nghiệm giao thức với tư cách là người dùng blockchain, chủ sở hữu token, nhà phát triển ứng dụng hoặc trình xác thực mạng.
 - Tiền điện tử devnet thường không có giá trị thực và các giao dịch devnet yêu cầu ít nỗ lực tính toán hơn so với mạng mainnet của chúng 
 - Đối với blockchain devnet người dùng cũng có thể khai thác tiền điện tử hoặc truy cập các dịch vụ vòi để lấy tiền 
+- Điểm nhập tin đồn cho Devnet: `entrypoint.devnet.solana.com:8001`
+- Biến môi trường số liệu cho Devnet:
+
+```bash
+export SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=devnet,u=scratch_writer,p=topsecret"
+```
+- URL RPC cho Devnet: `https://api.devnet.solana.com`
+
+- Ví dụ về cấu hình dòng lệnh solana:
+
+```bash
+solana config set --url https://api.devnet.solana.com
+```
 
 ### Testnet - Mạng thử nghiệm blockchain
 - Testnet đại diện cho các nút đã đồng ý làm việc cộng tác, độc lập với mạng chính
