@@ -2,7 +2,7 @@
 
 Sau khi một khối đạt đến độ chính xác, tất cả các khối từ khối đó trở xuống khối gốc tạo thành một chuỗi tuyến tính với tên gọi quen thuộc là blockchain. Tuy nhiên, cho đến thời điểm đó, trình xác thực phải duy trì tất cả các chuỗi hợp lệ tiềm năng, được gọi là fork. Quá trình mà các fork hình thành một cách tự nhiên do sự luân chuyển của người lãnh đạo được mô tả trong quá trình tạo fork. Cấu trúc dữ liệu kho khối được mô tả ở đây là cách trình xác thực đối phó với các nhánh đó cho đến khi các khối được hoàn thiện.
 
-Kho lưu trữ khối cho phép trình xác thực ghi lại mọi mẩu tin mà nó quan sát được trên mạng, theo bất kỳ thứ tự nào, miễn là mẩu tin đó được ký bởi người lãnh đạo dự kiến ​​cho một vị trí nhất định
+Kho lưu trữ khối cho phép trình xác thực ghi lại mọi mẩu tin mà nó quan sát được trên mạng, theo bất kỳ thứ tự nào, miễn là mẩu tin đó được ký bởi người lãnh đạo dự kiến cho một vị trí nhất định
 
 Các mảnh vụn được di chuyển đến một không gian khóa có thể phân nhánh `leader slot` + `shred inidex`. Điều này cho phép cấu trúc danh sách bỏ qua của giao thức Solana được lưu trữ toàn bộ, mà không cần phải lựa chọn trước cái fork nào sẽ tuân theo, Entries nào sẽ tồn tại hoặc khi nào thì duy trì chúng.
 
@@ -37,3 +37,26 @@ is_connected(0) is_connected(n+1) iff (is_connected(n) and slot(n).is_full()
 4. Subcriptions - Blockstore ghi lại một tập hợp các vị trí đã được "đăng ký". Điều này có nghĩa là các mục nhập liên kết với các vị trí này sẽ được gửi trên kênh Blockstore để tiêu thụ bởi ReplayStage. Xem các  `Blockstore APIs` để biết thêm chi tiết.
 
 5. Update notifications - Blockstore thông báo cho người nghe khi slot (n) .is_connected được chuyển từ false thành true cho bất kỳ `n` nào.
+
+## Blockstore APIs
+
+Blockstore cung cấp một API dựa trên đăng ký mà ReplayStage sử dụng để yêu cầu các mục nhập mà nó quan tâm. Các mục nhập sẽ được gửi trên một kênh do Blockstore hiển thị. Các API đăng ký này như sau: 1. `fn get_slots_since (slot_indexes: & [u64]) -> Vec <SlotMeta>`: Trả về các vị trí mới kết nối với bất kỳ phần tử nào của danh sách `slot_indexes`.
+
+1. `fn get_slot_entries(slot_index: u64, entry_start_index: usize, max_entries: Option<u64>) -> Vec<Entry>`: Trả về vectơ mục nhập cho vị trí bắt đầu bằng `entry_start_index`, giới hạn kết quả ở `max` nếu `max_entries == Some(max)`, nếu không, không áp dụng giới hạn trên cho độ dài của vectơ trả về.
+
+Lưu ý: Tích lũy, điều này có nghĩa là giai đoạn phát lại bây giờ sẽ phải biết khi nào một vị trí kết thúc và đăng ký vị trí tiếp theo mà nó quan tâm để nhận được tập hợp các mục tiếp theo. Trước đây, gánh nặng của các khe chuỗi đã đổ lên Blockstore.
+
+### Interfacing with Bank
+
+Ngân hàng dự kiến sẽ phát lại giai đoạn:
+1. `prev_hash`:cChuỗi POH nào đang hoạt động như được chỉ định bởi hàm băm của mục cuối cùng mà nó được xử lý
+
+2. `tick_height`: Các tick trong chuỗi PoH hiện đang được xác minh bởi ngân hàng này
+
+3. `vote`: một chồng các bản ghi có chứa: 1. pres_hashes: bất cứ thứ gì sau cuộc bỏ phiếu này phải liên kết với PoH 2. tick_height: chiều cao đánh dấu mà tại đó phiếu bầu này được bỏ 3. thời gian khóa: chuỗi phải được quan sát trong bao lâu trong sổ cái để có thể được xâu chuỗi bên dưới phiếu bầu này
+
+Giai đoạn phát lại sử dụng các API của Blockstore để tìm chuỗi mục nhập dài nhất mà nó có thể treo bỏ phiếu bầu trước đó. Nếu chuỗi mục nhập đó không kết thúc cuộc bỏ phiếu mới nhất, giai đoạn phát lại sẽ chuyển ngân hàng trở lại phiếu bầu đó và phát lại chuỗi từ đó.
+
+## Pruning Blockstore
+
+Khi các mục trong Blockstore đủ cũ, việc đại diện cho tất cả các nhánh có thể trở nên ít hữu ích hơn, thậm chí có thể có vấn đề khi phát lại khi khởi động lại. Tuy nhiên, khi phiếu bầu của người xác thực đã đạt đến mức khóa tối đa, bất kỳ nội dung Blockstore nào không có trong chuỗi PoH cho phiếu bầu đó đều có thể bị loại bỏ, xóa bỏ.
