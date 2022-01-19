@@ -29,6 +29,10 @@ export SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=mainnet-be
     - Kết nối đồng thời tối đa trên mỗi IP: 40
     - Tốc độ kết nối tối đa trên 10 giây trên mỗi IP: 40
     - Lượng dữ liệu tối đa mỗi 30 giây: 100 MB
+- Ví dụ về cấu hình dòng lệnh solana:
+```bash
+solana config set --url https://api.mainnet-beta.solana.com
+```
 
 ### Devnet - Mạng lưới phát triển blockchain
 - Giao thức solana khẳng định rằng devnet hoạt động như một "sân chơi" cho những người trải nghiệm giao thức với tư cách là người dùng blockchain, chủ sở hữu token, nhà phát triển ứng dụng hoặc trình xác thực mạng.
