@@ -41,3 +41,20 @@ Một nút sẽ gửi một thông điệp kéo để hỏi cụm xem có bất 
 Một nút xây dựng bộ lọc Bloom kéo bằng cách lặp lại các giá trị hiện tại và các giá trị đã xóa gần đây.
 
 Một nút xử lý các mục trong phản hồi kéo giống như cách nó xử lý dữ liệu mới trong thông báo đẩy.
+
+## Purging
+
+Các nút giữ lại các phiên bản trước của giá trị (những giá trị được cập nhật bằng cách kéo hoặc đẩy) và giá trị đã hết hạn (những giá trị cũ hơn `GOSSIP_PULL_CRDS_TIMEOUT_MS`) trong `purged_values` (những thứ tôi có gần đây).Thanh lọc các nút `purged_values` là các nút cũ hơn `5 * GOSSIP_PULL_CRDS_TIMEOUT_MS`.
+
+## Eclipse Attacks
+
+Một cuộc tấn công nhật thực là một nỗ lực để chiếm lấy tập hợp các kết nối nút với các điểm cuối đối nghịch.
+
+Điều này có liên quan đến việc triển khai của chúng tôi theo những cách sau.
+- Thông báo kéo chọn một nút ngẫu nhiên từ mạng. Một cuộc tấn công nhật thực khi kéo sẽ yêu cầu kẻ tấn công tác động đến lựa chọn ngẫu nhiên theo cách mà chỉ các nút đối nghịch được chọn để kéo.
+
+- Thông điệp đẩy duy trì một tập hợp các nút đang hoạt động và chọn một fanout ngẫu nhiên cho mỗi thông báo đẩy. Một cuộc tấn công nhật thực khi đẩy sẽ ảnh hưởng đến lựa chọn tập hợp đang hoạt động, hoặc lựa chọn phân bố ngẫu nhiên.
+
+### Time and Stake based weights
+
+Trọng lượng được tính dựa trên `time since last picked` và `natural log` của `stake weight`.
