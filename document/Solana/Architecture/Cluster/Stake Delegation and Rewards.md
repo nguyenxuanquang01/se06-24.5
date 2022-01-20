@@ -34,8 +34,18 @@ vai trò là người giám sát phần thưởng và cung cấp cho việc ủy
     - VoteInit mang tài khoản phiếu bầu mới node_pubkey và authorized_voterauthorized_withdrawercommission các thành viên khác của VoteState được mặc định
     
 3. VoteInstruction::Authorize(Pubkey, VoteAuthorize)
+
+    - Cập nhật tài khoản với người bỏ phiếu hoặc người rút tiền được ủy quyền mới, theo tham số VoteAuthorize ( Voterhoặc Withdrawer). Giao dịch phải được ký bằng tài khoản Vote       hiện tại authorized_voterhoặc authorized_withdrawer.
+    - account[0]- RW - Xếp hạng bình chọn. VoteState::authorized_voterhoặc authorized_withdrawerđược đặt thành Pubkey.
+    
 4. VoteInstruction::Vote(Vote)
+
+    - account[0]- RW - Xếp hạng bình chọn. VoteState::lockoutsvà VoteState::creditsđược cập nhật theo quy tắc khóa bỏ phiếu xem Tháp BFT. 
+    - account[1]- RO - sysvar::slot_hashesDanh sách một số N vị trí gần đây nhất và số băm của chúng để bỏ phiếu được xác minh chống lại.
+    - account[2]- RO - sysvar::clockThời gian mạng hiện tại, được biểu thị bằng vị trí, kỷ nguyên.
 5. StakeState
+
+    - Một StakeState có một trong bốn dạng, StakeState :: Uninitialized, StakeState :: Initialized, StakeState :: Stake và StakeState :: RewardsPool.Chỉ có ba hình thức đầu tiên       được sử dụng để đặt cược, nhưng chỉ có StakeState :: Stake là thú vị. Tất cả các RewardsPools đều được tạo từ ban đầu.
 6. StakeState::Stake
 7. StakeState::RewardsPool
 8. StakeInstruction::DelegateStake
