@@ -58,3 +58,25 @@ Một cuộc tấn công nhật thực là một nỗ lực để chiếm lấy 
 ### Time and Stake based weights
 
 Trọng lượng được tính dựa trên `time since last picked` và `natural log` của `stake weight`.
+
+Tính theo trọng số tiền cược cho phép mang lại cho tất cả các nút cơ hội phủ sóng mạng công bằng hơn trong một khoảng thời gian hợp lý. Nó giúp bình thường hóa sự khác biệt lớn về trọng lượng cổ phần có thể có giữa các nút. Bằng cách này, một nút có tỷ trọng tiền cược thấp, so với một nút có tỷ trọng tiền cược lớn sẽ chỉ phải đợi một vài bội số của ln (tiền cược) giây trước khi nó được chọn.
+
+Không có cách nào để kẻ xấu tác động đến các thông số này.
+
+### Pull Message
+
+Một nút được chọn làm mục tiêu kéo dựa trên các trọng số được mô tả ở trên.
+
+### Push Message
+
+Một thông điệp sơ lược chỉ có thể loại bỏ kẻ thù khỏi một kết nối tiềm năng.
+
+Cũng giống như pull message, các nút được chọn vào tập hợp hoạt động dựa trên trọng số.
+
+## Notable differences from PlumTree
+
+Giao thức đẩy hoạt động được mô tả ở đây dựa trên Cây mận. Sự khác biệt chính là:
+
+- Thông báo đẩy có một đồng hồ treo tường được ký bởi người khởi tạo. Sau khi đồng hồ treo tường hết hạn, thông báo sẽ bị xóa. Giới hạn bước nhảy rất khó thực hiện trong bối cảnh đối đầu.
+
+- Lazy Push không được triển khai vì nó không rõ ràng về cách ngăn kẻ thù giả mạo dấu vân tay tin nhắn. Một cách tiếp cận ngây thơ sẽ cho phép một đối thủ được ưu tiên kéo dựa trên đầu vào của họ.
