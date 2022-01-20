@@ -58,7 +58,25 @@ vai trò là người giám sát phần thưởng và cung cấp cho việc ủy
     - authorized_staker - mã giao dịch của thực thể phải ký các giao dịch ủy quyền, kích hoạt và hủy kích hoạt.
     - authorized_withdrawer - danh tính của pháp nhân chịu trách nhiệm cấp phát của tài khoản này, tách biệt với địa chỉ của tài khoản và người quản lý được ủy quyền.
 7. StakeState::RewardsPool
+
+    - Để tránh xảy ra tình trạng khóa hoặc tranh chấp trên toàn mạng duy nhất trong việc đổi quà, 256 RewardsPools là một phần của nguồn gốc theo các khóa được xác định trước,         mỗi khóa đều có các khoản tín dụng std::u64::MAX để có thể đáp ứng quy đổi theo giá trị điểm.
+    - Stakes và RewardsPool là các tài khoản thuộc sở hữu của cùng một Stakechương trình.
 8. StakeInstruction::DelegateStake
 9. StakeInstruction::Authorize(Pubkey, StakeAuthorize)
-10. StakeInstruction::Deactivate
-11. StakeInstruction::Withdraw(u64)
+
+    - Cập nhật tài khoản với người đặt hoặc người rút tiền được ủy quyền mới, theo tham số StakeAuthorize ( Stakerhoặc Withdrawer). Giao dịch phải được ký bởi tài khoản Stakee         hiện tại authorized_stakerhoặc authorized_withdrawer. Bất kỳ khóa cổ phần nào phải đã hết hạn hoặc người giám sát khóa cũng phải ký vào giao dịch.
+    1.1 account[0] - RW - StakeState.
+    1.2 StakeState::authorized_stakerhoặc authorized_withdrawerđược đặt thành Pubkey
+12. StakeInstruction::Deactivate
+
+    - Một người đặt cược có thể muốn rút khỏi mạng. Để làm như vậy, trước tiên anh ta phải hủy kích hoạt tiền cược của mình và đợi thời gian hồi chiêu. Giao dịch phải được ký         bởi cổ phần authorized_staker
+            - account[0] - RW - Phiên bản StakeState :: Stake đang ngừng hoạt động.
+            - account[1] - Tài khoản đồng hồ R - sysvar :: từ Ngân hàng mang kỷ nguyên hiện tại.
+    - StakeState :: Stake :: hủy kích hoạt được đặt thành kỷ nguyên + thời gian hồi chiêu hiện tại. Tiền đặt cược của tài khoản sẽ giảm xuống 0 trong khoảng thời gian đó và           Account::lamports sẽ có sẵn để rút.
+13. StakeInstruction::Withdraw(u64)
+
+    - Tiền cược tích lũy theo thời gian trong tài khoản Tiền cược và bất kỳ khoản tiền nào vượt quá số tiền cược đã kích hoạt đều có thể được rút. Giao dịch phải được ký bởi cổ phần authorized_withdrawer.
+            - account[0]- RW - StakeState :: Tiền cược để rút.
+            - account[1]- RW - Tài khoản sẽ được ghi có với các loại đèn đã rút.
+            - account[2]- Tài khoản đồng hồ R - sysvar :: từ Ngân hàng mang kỷ nguyên hiện tại, để tính tiền đặt cược.
+            - account[3]- Tài khoản R - sysvar :: stake_history từ Ngân hàng có lịch sử khởi động / cooldown cổ phần.
