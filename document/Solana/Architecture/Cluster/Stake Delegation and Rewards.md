@@ -47,6 +47,16 @@ vai trò là người giám sát phần thưởng và cung cấp cho việc ủy
 
     - Một StakeState có một trong bốn dạng, StakeState :: Uninitialized, StakeState :: Initialized, StakeState :: Stake và StakeState :: RewardsPool.Chỉ có ba hình thức đầu tiên       được sử dụng để đặt cược, nhưng chỉ có StakeState :: Stake là thú vị. Tất cả các RewardsPools đều được tạo từ ban đầu.
 6. StakeState::Stake
+
+    StakeState :: Stake là tùy chọn ủy quyền hiện tại của staker và chứa thông tin trạng thái sau:
+    - Account::lamports Các loại đèn có sẵn để đặt cược.
+    - stake- số tiền đặt cược ( tùy thuộc vào thời gian khởi động và thời gian hồi chiêu ) để tạo phần thưởng, luôn nhỏ hơn hoặc bằng Account::lamports.
+    - voter_pubkey - Phím pubkey của phiên bản VoteState mà các đèn được ủy quyền.
+    - credits_observed - Tổng số tín dụng được yêu cầu trong suốt thời gian của chương trình.
+    - activated- kỷ nguyên mà cổ phần này được kích hoạt / ủy quyền. Toàn bộ tiền cược sẽ được tính sau khi khởi động.
+    - deactivated - thời gian mà số tiền đặt cược này bị hủy kích hoạt, một số thời gian hồi chiêu được yêu cầu trước khi tài khoản bị vô hiệu hóa hoàn toàn và số tiền đặt cược        có sẵn để rút.
+    - authorized_staker - mã giao dịch của thực thể phải ký các giao dịch ủy quyền, kích hoạt và hủy kích hoạt.
+    - authorized_withdrawer - danh tính của pháp nhân chịu trách nhiệm cấp phát của tài khoản này, tách biệt với địa chỉ của tài khoản và người quản lý được ủy quyền.
 7. StakeState::RewardsPool
 8. StakeInstruction::DelegateStake
 9. StakeInstruction::Authorize(Pubkey, StakeAuthorize)
