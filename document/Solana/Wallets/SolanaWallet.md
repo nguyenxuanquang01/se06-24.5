@@ -1,7 +1,7 @@
 ### Wallet
 
 - Ví tiền điện tử là một thiết bị hoặc ứng dụng lưu trữ một bộ sưu tập các khóa và có thể được sử dụng để gửi/nhận và theo dõi quyền sở hữu tiền điện tử 
-- Ví có thể có nhiều dạng. Ví có thể là một thư mục hoặc tệp trong hệ thống tệp máy tính, một thiết bị chuyên dụng được gọi là ví phần cứng. Ngoài ra còn có các ứng dụng điện thoại thông minh và chương trình máy tính cung cấp một các thân thiện với người dùng để tạo và quản lý ví
+- Ví có thể có nhiều dạng. Ví có thể là một thư mục hoặc tệp trong hệ thống tệp máy tính, một thiết bị chuyên dụng được gọi là ví phần cứng. Ngoài ra còn có các ứng dụng điện thoại thông minh và chương trình máy tính cung cấp một cách thân thiện với người dùng để tạo và quản lý ví
 - Khóa riêng tư (private key) và khóa công khai (public key) được gọi là một cặp khóa. Ví chứa một bộ sưu tập của một hoặc nhiều cặp khóa và cung cấp một số phương tiện để tương tác với chúng 
 
 #### Public Key (pubkey) 
