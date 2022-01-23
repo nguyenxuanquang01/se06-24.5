@@ -1,7 +1,7 @@
 ### Solana Clusters
 - Cluster là một tập hợp các máy tính đang làm việc cùng nhau. Chúng có thể được nhìn từ bên ngoài như một hệ thống số ít
 - Solana Cluster là tập hợp các máy tính sở hữu độc lập thường hoạt động cùng nhau (cũng có thể chống lại nhau). Máy tính giúp xác minh kết quả đầu ra của các chương trình không đáng tin cậy, do người dùng gửi
-- Solana Cluster là một tập hợp các trình xác thực làm việc cùng nhau để phục vụ các giao dịch của khách hàng và duy trì tính toán vẹn của số cái, nhiều cụm có thể cùng tồn tại song song. Các giao dịch được gửi đến không đúng nơi sẽ bị từ chối một cách lặng lẽ
+- Solana Cluster là một tập hợp các trình xác thực làm việc cùng nhau để phục vụ các giao dịch của khách hàng và duy trì tính toán vẹn của sổ cái, nhiều cụm có thể cùng tồn tại song song. Các giao dịch được gửi đến không đúng nơi sẽ bị từ chối
 - Solana duy trì một số cụm khác nhau với các mục đích khác nhau 
 - Hơn nữa ta có thể sử dụng cụm bất cứ lúc nào mà người dùng hy vọng sẽ lưu trữ một bản ghi bất biến về các sự kiện hoặc diễn giải theo chương trình của các sự kiện
 
