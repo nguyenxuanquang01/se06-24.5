@@ -8,9 +8,9 @@ Toàn bộ hoạt động của Smart Contract được thực hiện một các
 
 ### Hợp đồng hoạt động như thế nào ?
 
-Hợp đồng thông minh hoạt động như một chương trình tất định. Nó thực thi một tác vụ cụ thể trong trường hợp thỏa mãn các điều kiện nhất định. Do đó hợp đồng thông minh tuân theo các câu lệnh "nếu... thì...". Trên mạng Ethereum, hợp đồng thông minh chịu trách nhiệm thực thi và quả lí các hoạt động diễn ra trên blockchain. Về cơ bản, hợp đồng thông minh Ethereum bao gồm một mã hợp đồng và hai khóa công khai. Khóa công khai thứ nhất là khóa do người tạo hợp đồng cung cấp. Khóa còn lại đại diện cho chính hợp đồng, khóa này có vài trò như một mã định danh kỹ thuật số duy nhất cho mỗi hợp đồng thông minh.
+Hợp đồng thông minh hoạt động như một chương trình tất định. Nó thực thi một tác vụ cụ thể trong trường hợp thỏa mãn các điều kiện nhất định. Do đó hợp đồng thông minh tuân theo các câu lệnh "nếu... thì...". Trên mạng Ethereum, hợp đồng thông minh chịu trách nhiệm thực thi và quản lí các hoạt động diễn ra trên blockchain. Về cơ bản, hợp đồng thông minh Ethereum bao gồm một mã hợp đồng và hai khóa công khai. Khóa công khai thứ nhất là khóa do người tạo hợp đồng cung cấp. Khóa còn lại đại diện cho chính hợp đồng, khóa này có vai trò như một mã định danh kỹ thuật số duy nhất cho mỗi hợp đồng thông minh.
 
-Trong một hợp đồng thông minh, có thể có nhiều quy định cần thiết để thỏa mãn những người tham gia rằng nhiệm vụ sẽ được hoàn thành một cách mỹ mãn. Để thiết lập các điều khoản, người tham gia phải xác định cách các giao dịch và dữ liệu của họ được đại diện trên blockchain, đồng ý về các quy tắc “if/when...then…” chi phối các giao dịch đó, khám phá tất cả các ngoại lệ có thể xảy ra và xác định khuôn khổ để giải quyết tranh chấp .
+Trong một hợp đồng thông minh, có thể có nhiều quy định cần thiết để thỏa mãn những người tham gia rằng nhiệm vụ sẽ được hoàn thành một cách mỹ mãn. Để thiết lập các điều khoản, người tham gia phải xác định cách các giao dịch và dữ liệu của họ được đại diện trên blockchain, đồng ý về các quy tắc “if/when...then…” chi phối các giao dịch đó, khám phá tất cả các ngoại lệ có thể xảy ra và xác định khuôn khổ để giải quyết tranh chấp.
 
 Sau đó, hợp đồng thông minh có thể được lập trình bởi nhà phát triển - mặc dù ngày càng có nhiều tổ chức sử dụng blockchain cho doanh nghiệp cung cấp các mẫu, giao diện web và các công cụ trực tuyến khác để đơn giản hóa cấu trúc hợp đồng thông minh.
 
@@ -20,7 +20,7 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 
 ### Lợi ích của Smart Contract
 
-- **Tự do** : Không bị một cơ quan nào quả lí
+- **Tự do** : Không bị một cơ quan nào quản lí
 - **Phân tán** : Hợp đồng thông minh được sao chép và phân phối trong tất cả các nút của mạng Ethereum. Đây là một điểm khác biệt so với các giải pháp khác dựa trên các máy chủ tập trung.
 - **Tất định** : Hợp đồng thông minh chỉ thực hiện các hành động mà chúng được thiết kế để thực hiện trong trường hợp các điều kiện được thỏa mãn. Bên cạnh đó, các kết quả của hợp đồng thông minh không đổi dù người thực hiện là ai.
 - **Tự động** : Hợp đồng thông minh có thể tự động hóa tất cả các loại tác vụ, nó hoạt động như một chương trình tự thực hiện. Tuy nhiên, trong hầu hết các trường hợp, nếu hợp đồng thông minh không được kích hoạt, nó sẽ duy trì trạng thái “không hoạt động” và sẽ không thực hiện bất kỳ hành động nào.
@@ -31,9 +31,9 @@ Giả dụ bạn muốn thuê một căn hộ từ tôi. Bạn có thể trả t
 
 ### Nhược điểm của Smart Contract
 
-- **Tính pháp** : Bạn sẽ không được bảo vệ quyền lợi khi xảy ra lỗi phát sinh do pháp luật các nước hiện nay chưa có chính sách để khai thác, quản lý smart contract.
+- **Tính pháp lý** : Bạn sẽ không được bảo vệ quyền lợi khi xảy ra lỗi phát sinh do pháp luật các nước hiện nay chưa có chính sách để khai thác, quản lý smart contract.
 - **Chi phí triển khai** : Cần chi trả cho hệ thống cơ sở hạ tầng, máy tính, và các lập trình viên giỏi để họ triển khai.
-- **Rủ ro từ Internet** : Bản chất của Smart Contract là rất an toàn, nhưng nếu bạn để lộ một số thông tin nhạy cảm hoặc bị các hacker khai thác các thông tin đó thì chắc chắn sẽ gặp những trường hợp rắc rối.
+- **Rủi ro từ Internet** : Bản chất của Smart Contract là rất an toàn, nhưng nếu bạn để lộ một số thông tin nhạy cảm hoặc bị các hacker khai thác các thông tin đó thì chắc chắn sẽ gặp những trường hợp rắc rối.
 
 ### Để tạo lên một Smart Contract cần những gì ?
 
